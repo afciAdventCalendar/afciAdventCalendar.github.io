@@ -1,0 +1,34 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.jd-calendrier {
+  background-color: green;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.porte {
+  /* cursor: pointer; */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 120px;
+  height: 155px;
+  transform-origin: left;
+  transition: all 0.5s ease-in-out;
+}
+
+.ouverture {
+  transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px)
+    rotateY(-160deg);
+}
+
+.message {
+  color: white;
+  text-align: center;
+}

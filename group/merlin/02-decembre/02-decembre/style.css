@@ -1,0 +1,75 @@
+.cards_merlin {
+	max-width: 350px;
+	max-height: 350px;
+	background-color: rgb(189, 181, 181);
+	-webkit-transform: perspective(900px);
+	-webkit-transform-style: preserve-3d;
+  }
+
+/* ------------------------------------------------------------------------------- */
+/* ----------------------------- Custom du Text ---------------------------------- */
+/* ------------------------------------------------------------------------------- */
+  .cards_merlin > h1{
+	margin-bottom: 150px
+  }
+  .title_merlin{
+	text-align: center;
+  }
+  .title_merlin h1{
+	font-size: 25px;
+	font-family: 'Exo', sans-serif;
+  }
+  .card_merlin_1, .card_merlin_2, .card_merlin_3 >h3{
+	margin-top: 0px;
+	font-size: 18px;
+	margin-top: 5px;
+	font-family: 'Abel', sans-serif;
+	color:rgb(255,255,255);
+	text-shadow: 0 0 2px rgb(255,255,255);
+	transform: translatey(10px);
+  }
+  
+/* ------------------------------------------------------------------------------- */
+/* -------------------------- Cartes Taille et Animations ------------------------ */
+/* ------------------------------------------------------------------------------- */
+
+ .card_merlin_1, .card_merlin_2, .card_merlin_3{
+	text-align:center;
+	position: absolute;
+	width: 125px;
+	height: 175px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	transition: 0.6s;
+	transform: rotatex(75deg) translatey(-200px) translatez(-100px);
+	background-color: grey;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* ---------------------------- Couleur Carte et Position------------------------- */
+/* ------------------------------------------------------------------------------- */
+
+.card_merlin_1 {
+	left: 0%;
+  }
+  
+.card_merlin_2 {
+	left: 40%;
+}
+.card_merlin_3 {
+  	left: 80%;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* ---------------------------- Cartes Survol ------------------------------------ */
+/* ------------------------------------------------------------------------------- */
+
+  .card_merlin_1:hover, .card_merlin_2:hover, .card_merlin_3:hover{
+	transform: rotatex(0deg);
+	transition: 0.6s;
+  }
+  .card_merlin_1 img, .card_merlin_2 img, .card_merlin_3 img{
+	transform: translateY(15px);
+	width: 110px;
+	height: 100px;
+  }

@@ -1,0 +1,197 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/font/Raleway/static/Raleway-Regular.ttf");
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/font/Raleway/static/Raleway-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Hi-Christmas";
+  src: url("/assets/font/hi_christmas/Hi\ Christmas.otf");
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: rgb(217, 245, 240);
+}
+header {
+  height: 300px;
+  background-color: burlywood;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background: url("/assets/img/winter.png") center/cover;
+}
+h1.header_title {
+  margin-top: 20px;
+  font-size: 3rem;
+  color: #4b2142;
+  font-family: "Hi-Christmas";
+}
+h2.header_subtitle {
+  padding-left: 20%;
+  color: #e8c547;
+  font-family: "Raleway";
+  font-style: italic;
+}
+main {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(217, 245, 240);
+}
+.case {
+  width: 80%;
+  aspect-ratio: 1/1;
+  background-color: white;
+  margin-bottom: 10px;
+  perspective: 2000px;
+  perspective-origin: top;
+}
+.done {
+  backface-visibility: hidden;
+}
+.done p {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.case:nth-of-type(3n),
+.done:nth-of-type(3n) {
+  background-color: #285460;
+}
+.case:nth-of-type(3n + 1),
+.done:nth-of-type(3n + 1) {
+  background-color: #4b2142;
+}
+.done:nth-of-type(3n + 1) p {
+  color: white;
+}
+.case:nth-of-type(3n + 2),
+.done:nth-of-type(3n + 2) {
+  background-color: #e8c547;
+}
+.case:hover > .lift {
+  cursor: pointer;
+  transform: rotateX(20deg) rotateY(-20deg) rotateZ(5deg);
+  box-shadow: -1px 1px rgba(235, 235, 235, 0.5);
+}
+.card {
+  padding: 30px;
+  transform-origin: top left;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+  background-color: rgb(235, 109, 19);
+}
+h3 {
+  height: 60px;
+  line-height: 56px;
+  width: 60px;
+  text-align: center;
+  background-color: rgb(217, 245, 240);
+  border-radius: 50%;
+  font-family: "Raleway";
+  font-weight: bold;
+  font-size: 22px;
+}
+footer {
+  position: relative;
+  min-height: 160px;
+  background: url("/assets/img/wave.svg") bottom/cover;
+}
+footer span {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-family: "Raleway";
+  font-style: italic;
+}
+.dateDay {
+  box-shadow: 5px 5px rgba(40, 84, 96, 0.5);
+}
+@media screen and (min-width: 36rem) {
+  header {
+    min-height: 427px;
+    background: url("/assets/img/winter.png") no-repeat bottom center;
+  }
+  h1.header_title {
+    font-size: 5rem;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .case {
+    width: auto;
+    margin-bottom: 0px;
+  }
+  footer span {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  header {
+    height: 500px;
+    background: url("/assets/img/winter.png") bottom/cover;
+  }
+  h1.header_title {
+    margin-top: 50px;
+    font-size: 6rem;
+  }
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .case {
+    width: auto;
+    margin-bottom: 0px;
+  }
+  h3 {
+    width: 50px;
+    height: 50px;
+    line-height: 48px;
+  }
+  .card {
+    padding: 20px;
+  }
+  footer {
+    min-height: 300px;
+  }
+  footer span {
+    bottom: 50px;
+  }
+}
+/* ------------------- LAURENCE ANIMATION ----------------------- */
+.ld-vanish {
+  animation: noel 2s ease-in forwards;
+}
+@keyframes noel {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
