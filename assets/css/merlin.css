@@ -1,0 +1,48 @@
+.merlin {
+  position: sticky;
+  top: 20px;
+  left: 20px;
+  aspect-ratio: 1/1;
+  font: italic bold 8px "Fira Sans", serif;
+  background-color: #000;
+  display: grid;
+  place-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.merlin > h1 {
+  color: white;
+  text-align: center;
+  /* margin-bottom: 30px; */
+}
+.merlin > h2 {
+  background-color: #000;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+.img_merlin {
+  width: 30%;
+  transform: perspective(800px) rotateY(25deg);
+  transition: 0.5s;
+}
+.games_containers_merlin {
+  max-width: 400px;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.games_containers_merlin:hover img {
+  opacity: 0.3;
+}
+.games_containers_merlin img:hover {
+  transform: perspective(800px) rotateY(0deg);
+  opacity: 1;
+}
+.animationMerlin {
+  position: fixed;
+  top: 0;
+  left: 0;
+}

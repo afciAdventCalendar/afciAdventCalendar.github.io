@@ -64,6 +64,9 @@ main {
   perspective: 2000px;
   perspective-origin: top;
 }
+.case:hover {
+  cursor: pointer;
+}
 .done {
   backface-visibility: hidden;
 }

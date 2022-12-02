@@ -75,37 +75,44 @@ if (date1 < day) {
   caseDone(thefront, "Guillaume", 1);
 }
 
-// CASE 2 - Animation Jody ------------------------------------------------------------------
-const card2 = document.querySelector("#case2 .porte");
-card2.addEventListener("click", () => {
-  toggleDoor(card2);
-});
-function toggleDoor(card) {
-  card.classList.rotate("ouverture");
-}
-
 // CASE 5 - Animation Merlin ----------------------------------------------------------------
-const date5 = 5;
-const case5 = document.querySelector("#case5");
-if (date5 <= day) {
-  case5.addEventListener("click", merlinAnimation);
+const date2 = 2;
+let toggleCase2 = 0;
+const case2 = document.querySelector("#case2");
+if (date2 <= day) {
+  case2.addEventListener("click", merlinAnimation);
 }
 const merlinCard = `
         <div class="merlin">
           <h1>Pour la fin d'année, passer les fêtes en famille !</h1>
           <div class="games_containers_merlin">
-            <img class="img_merlin" src="/group/merlin/01-decembre/dota-2.png" alt="" />
-            <img class="img_merlin" src="/group/merlin/01-decembre/lol.png" alt="" />
-            <img class="img_merlin" src="/group/merlin/01-decembre/wow.png" alt="" />
+            <img class="img_merlin" src="/assets/img/merlin1.png" alt="" />
+            <img class="img_merlin" src="/assets/img/merlin2.png" alt="" />
+            <img class="img_merlin" src="/assets/img/merlin3.png" alt="" />
           </div>
           <h2>Je parle de la vraie.. (non)</h2>
         </div>
 `;
 function merlinAnimation() {
-  showDefault(case5);
-  setTimeout(() => {
-    case5.innerHTML = merlinCard;
-  }, 2000);
+  if (toggleCase2 == 0) {
+    showDefault(case2);
+    case2.firstElementChild.style.opacity = 0;
+    setTimeout(() => {
+      case2.style.backgroundColor = "black";
+      case2.innerHTML = merlinCard;
+      case2.firstElementChild.style.opacity = 1;
+      case2.firstElementChild.style.transition = "opacity 0.5s";
+    }, 2000);
+    toggleCase2 = 1;
+  } else {
+    case2.style.backgroundColor = "#e8c547";
+    case2.innerHTML = `<div class="card"></div>`;
+    const card2 = case2.querySelector("#case2 .card");
+    caseDone(card2, "Merlin", 2);
+    card2.style.backgroundColor = "#e8c547";
+    card2.classList.add("lift");
+    toggleCase2 = 0;
+  }
 }
 
 // CASE 10 - Animation Laurence -----------------------------------------------------------
