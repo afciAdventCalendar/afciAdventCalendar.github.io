@@ -71,6 +71,9 @@ function guillaumeAnimation(e) {
 if (date1 <= day) {
   card1.addEventListener("click", guillaumeAnimation);
 }
+if (date1 < day) {
+  caseDone(thefront, "Guillaume", 1);
+}
 
 // CASE 2 - Animation Jody ------------------------------------------------------------------
 const card2 = document.querySelector("#case2 .porte");
@@ -78,7 +81,7 @@ card2.addEventListener("click", () => {
   toggleDoor(card2);
 });
 function toggleDoor(card) {
-  card.classList.toggle("ouverture");
+  card.classList.rotate("ouverture");
 }
 
 // CASE 5 - Animation Merlin ----------------------------------------------------------------
