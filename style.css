@@ -63,6 +63,7 @@ main {
   margin-bottom: 10px;
   perspective: 2000px;
   perspective-origin: top;
+  z-index: 10;
 }
 .case:hover {
   cursor: pointer;
