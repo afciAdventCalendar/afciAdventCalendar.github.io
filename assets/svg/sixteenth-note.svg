@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="744.09448"
+   height="1052.3622"
+   id="svg2986">
+  <title
+     id="title3044">sixteenth note</title>
+  <defs
+     id="defs2988">
+    <linearGradient
+       id="linearGradient3013">
+      <stop
+         id="stop3015"
+         style="stop-color:#000000;stop-opacity:0.8263889"
+         offset="0" />
+      <stop
+         id="stop3017"
+         style="stop-color:#000000;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       x1="382.33768"
+       y1="489.13965"
+       x2="490.53049"
+       y2="333.89423"
+       id="linearGradient3019"
+       xlink:href="#linearGradient3013"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.0778635,0,0,2.0778635,-518.08353,-281.80071)" />
+    <linearGradient
+       x1="382.33768"
+       y1="489.13965"
+       x2="490.53049"
+       y2="333.89423"
+       id="linearGradient3019-9"
+       xlink:href="#linearGradient3013-3"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.0778635,0,0,2.0778635,-518.08353,-281.80071)" />
+    <linearGradient
+       id="linearGradient3013-3">
+      <stop
+         id="stop3015-8"
+         style="stop-color:#000000;stop-opacity:0.8263889"
+         offset="0" />
+      <stop
+         id="stop3017-0"
+         style="stop-color:#000000;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       x1="382.33768"
+       y1="489.13965"
+       x2="490.53049"
+       y2="333.89423"
+       id="linearGradient3033"
+       xlink:href="#linearGradient3013"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.0778635,0,0,2.0778635,-518.08353,-281.80071)" />
+  </defs>
+  <metadata
+     id="metadata2991">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>sixteenth note</dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jaschon</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <path
+       d="m 405.6875,224.28125 c -27.69289,12.63378 -18.24535,57.25408 -19.33542,86.18484 -1.18925,107.51777 3.58022,210.59436 0.66265,318.08549 -0.188,35.28257 -34.7063,24.68444 -56.81238,18.01083 -47.82699,-6.03073 -98.44352,12.64658 -131.25511,47.77194 -25.55673,27.98239 -37.24675,77.62302 -7.57826,106.91827 26.23049,25.58832 66.73569,30.14516 101.43913,24.37712 37.2078,-8.37363 71.68327,-28.44902 99.58921,-54.14552 21.63479,-19.67116 25.99979,-48.74275 26.85237,-77.75782 1.30952,-40.25286 -0.62362,-80.75249 2.36398,-120.85008 -0.0361,-29.30694 -3.58605,-74.22169 32.04169,-60.44445 25.0983,17.62113 47.4741,41.21209 62.64055,68.07183 13.79693,30.34176 24.55499,63.96221 19.63742,97.6727 -3.12638,26.77916 26.62727,19.40828 25.66223,-1.862 16.30623,-48.25178 2.96188,-103.27544 -29.77717,-141.52649 -33.72872,-46.82927 -83.16137,-82.09684 -106.03618,-136.46909 -15.25797,-32.92272 21.12919,-53.28486 44.92264,-26.67478 24.73218,24.11735 49.90729,50.14071 58.18148,84.92795 9.2285,23.96588 11.07759,49.87008 8.85267,75.19883 13.21876,33.99695 30.6336,-12.133 30.46265,-28.97576 7.83102,-44.29771 -8.6758,-90.22213 -37.72121,-123.71457 C 497.49982,334.3795 450.2968,300.10527 428.09559,247.84511 422.07241,239.35653 418.77284,223.4802 405.6875,224.28125 z"
+       id="path3"
+       style="fill:url(#linearGradient3033);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5.92410803;stroke-linecap:round;stroke-linejoin:round" />
+  </g>
+  <g
+     transform="translate(-370.20381,-179.85259)"
+     id="layer1-2" />
+</svg>

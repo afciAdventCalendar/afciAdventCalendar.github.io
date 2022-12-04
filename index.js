@@ -3,7 +3,7 @@ const date = new Date();
 let day = date.getDate();
 const caseDay = document.querySelector(`#case${day}`);
 const cases = document.querySelectorAll(".case");
-
+const viewAnimation = document.querySelector("#view-animation");
 // Au chargement de la page on se place au niveau de la case du jour
 window.addEventListener("load", goTo);
 function goTo() {
@@ -107,14 +107,16 @@ function merlinAnimation() {
   } else {
     case2.style.backgroundColor = "#e8c547";
     case2.innerHTML = `<div class="card"></div>`;
-    const card2 = case2.querySelector("#case2 .card");
-    caseDone(card2, "Merlin", 2);
-    card2.style.backgroundColor = "#e8c547";
-    card2.classList.add("lift");
+
     toggleCase2 = 0;
   }
 }
-
-// CASE 10 - Animation Laurence -----------------------------------------------------------
+if (date2 < day) {
+  const card2 = case2.querySelector("#case2 .card");
+  caseDone(card2, "Merlin", 2);
+  card2.style.backgroundColor = "#e8c547";
+  card2.classList.add("lift");
+}
+// CASE 4 - Animation Laurence -----------------------------------------------------------
 
 // CASE 15 - Animation --------------------------------------------------------------------

@@ -29,8 +29,8 @@ function animkb() {
     kbdiv.classList.remove("kbcardopen");
     carte3.addEventListener("click", animkb);
     carte3.style.position = "relative";
-    carte3.innerHTML = `<div class="card done lift"><h3>03</h3><p>par Kévin B.</></div>`;
-    const carte3Content = carte3.querySelector(".card");
-    carte3Content.style.backgroundColor = "#285460";
   });
 }
+carte3.innerHTML = `<div class="card done lift"><h3>03</h3><p>par Kévin B.</></div>`;
+const carte3Content = carte3.querySelector(".card");
+carte3Content.style.backgroundColor = "#285460";
