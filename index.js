@@ -1,6 +1,7 @@
 "use strict";
-const date = new Date();
-let day = date.getDate();
+// const date = new Date();
+// let day = date.getDate();
+day = 24;
 const caseDay = document.querySelector(`#case${day}`);
 const cases = document.querySelectorAll(".case");
 const viewAnimation = document.querySelector("#view-animation");
@@ -75,7 +76,7 @@ if (date1 < day) {
   caseDone(thefront, "Guillaume", 1);
 }
 
-// CASE 5 - Animation Merlin ----------------------------------------------------------------
+// CASE 2 - Animation Merlin ----------------------------------------------------------------
 const date2 = 2;
 let toggleCase2 = 0;
 const case2 = document.querySelector("#case2");
@@ -117,6 +118,5 @@ if (date2 < day) {
   card2.style.backgroundColor = "#e8c547";
   card2.classList.add("lift");
 }
-// CASE 4 - Animation Laurence -----------------------------------------------------------
 
 // CASE 15 - Animation --------------------------------------------------------------------

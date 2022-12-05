@@ -1,0 +1,185 @@
+*, ::before, ::after{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+@font-face {
+    font-family: "noel";
+    src: url(./font/static/DancingScript-Bold.ttf);
+} 
+#case15 img{
+    position: absolute;
+    width: 100%;
+    opacity: 1;
+    transition: width 3s linear;
+    border: solid 3px rgb(0, 0, 0);
+    animation: 2s linear infinite ;
+}
+   
+#case15 p{
+    
+    color: green;
+    width: 100%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    font-family: 'noel';
+    font-size: 3rem;
+    text-align: center;
+    animation: 2s linear infinite;
+    opacity: 1;
+    transition: opacity 2s linear;
+}
+@keyframes clignote {
+    5%{
+        color: white;
+    }
+    10%{
+        color: green;
+    }
+    15%{
+        color: red;
+    }
+    20%{
+        color: green;
+    }
+    25%{
+        color: white;
+    }
+    30%{
+        color: red;
+    }
+    35%{
+        color: white;
+    }
+    40%{
+        color: green;
+    }
+    45%{
+        color: red;
+    }
+    50%{
+        color: green;
+    } 
+    55%{
+        color: white;
+    }
+    60%{
+        color: red;
+    }
+    65%{
+        color: white;
+    }
+    70%{
+        color: green;
+    }
+    75%{
+        color: red;
+    }
+    80%{
+        color: green;
+    }
+    85%{
+        color: white;
+    }
+    90%{
+        color: red;
+    }
+    95%{
+        color: white;
+    }
+    100%{
+        color: green;
+    } 
+}
+
+@keyframes bclignote {
+    5%{
+        border-color: white;
+    }
+    10%{
+        border-color: green;
+    }
+    15%{
+        border-color: red;
+    }
+    20%{
+        border-color: green;
+    }
+    25%{
+        border-color: white;
+    }
+    30%{
+        border-color: red;
+    }
+    35%{
+        border-color: white;
+    }
+    40%{
+        border-color: green;
+    }
+    45%{
+        border-color: red;
+    }
+    50%{
+        border-color: green;
+    } 
+    55%{
+        border-color: white;
+    }
+    60%{
+        border-color: red;
+    }
+    65%{
+        border-color: white;
+    }
+    70%{
+        border-color: green;
+    }
+    75%{
+        border-color: red;
+    }
+    80%{
+        border-color: green;
+    }
+    85%{
+        border-color: white;
+    }
+    90%{
+        border-color: red;
+    }
+    95%{
+        border-color: white;
+    }
+    100%{
+        border-color: green;
+    } 
+}
+
+.cursor span {
+        z-index: 100000000;
+        width: 100px;
+        height: 100px;
+        background: url("./font/test.png");
+        background-size: cover;
+        position: absolute;
+        pointer-events: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: animate 3s linear;
+    
+}
+
+@keyframes animate{
+        0%{
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+        100%{
+            transform: translate(-50%, 500%);
+            opacity: 0;
+        }
+    }

@@ -66,6 +66,7 @@ main {
   z-index: 2000;
   background-color: rgba(235, 235, 235, 0.5);
   display: none;
+  perspective: 2000px;
 }
 .card-content {
   width: 100%;
@@ -161,7 +162,7 @@ main {
   transform-style: preserve-3d;
   background-color: rgb(235, 109, 19);
 }
-h3 {
+h3.home {
   height: 60px;
   line-height: 56px;
   width: 60px;
