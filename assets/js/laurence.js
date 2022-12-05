@@ -1,26 +1,9 @@
+date = new Date();
+day = date.getDate();
 const case4 = document.getElementById("case4");
 const card4 = case4.querySelector(".card");
-let toggleCard10 = 0;
-
-case4.addEventListener("click", () => {
-  if (toggleCard10 == 0) {
-    card4.setAttribute("id", "card4");
-    toggleCard10 = 1;
-  } else {
-    card4.removeAttribute("id");
-    toggleCard10 = 0;
-    card4.classList.add("card4-done");
-    card4.innerHTML = `
-    <h3>4</h3>
-    <p>par Laurence</>`;
-    card4.style.backgroundColor = "#4b2142";
-  }
-});
-const card4Container = case4.querySelector(".card-container");
-
-card4Container.addEventListener("click", () => {
-  viewAnimation.innerHTML = `
-    <div class="card-container">
+const card4HTML = `
+        <div class="card-container">
           <div class="card-content">
             <div class="close">
               <div class="cross"></div>
@@ -36,17 +19,45 @@ card4Container.addEventListener("click", () => {
           </div>
         </div>
   `;
-  viewAnimation.style.display = "block";
-  notesMusic();
-  const closer = document.querySelector(".close");
-  closer.addEventListener("click", () => {
-    viewAnimation.innerHTML = "";
-    viewAnimation.style.display = "none";
-    pauseSing();
-  });
+let toggleCard10 = 0;
+// Quand la date est passée
+if (day > 4) {
+  card4.classList.add("card4-done");
+  card4.innerHTML = `
+    <h3>4</h3>
+    <p>par Laurence</>`;
+  card4.style.backgroundColor = "#4b2142";
+}
+
+// Ouverture de la carte et découverte de l'animation
+// Ajout d'un id sur la card pour venir annuler et remplacer l'effet de la classe .lift
+case4.addEventListener("click", () => {
+  if (toggleCard10 == 0) {
+    card4.setAttribute("id", "card4");
+    toggleCard10 = 1;
+  } else {
+    card4.removeAttribute("id");
+    toggleCard10 = 0;
+  }
 });
 
-//
+// Si l'utilisateur n'est pas sur un smartphone
+// Mise en plein écran via la div viewAnimation
+if (window.innerWidth > 900) {
+  const card4Container = case4.querySelector(".card-container");
+  card4Container.addEventListener("click", () => {
+    viewAnimation.innerHTML = card4HTML;
+    viewAnimation.style.display = "block";
+    notesMusic();
+    const closer = document.querySelector(".close");
+    closer.addEventListener("click", () => {
+      viewAnimation.innerHTML = "";
+      viewAnimation.style.display = "none";
+      pauseSing();
+    });
+  });
+}
+
 //----------------------------------------------------------------------
 // Animation de la div Hobby Music dans case 4
 const musicHobby4 = document.getElementById("hobby-music-4");
