@@ -1,7 +1,7 @@
 "use strict";
-// const date = new Date();
-// let day = date.getDate();
-day = 24;
+const date = new Date();
+let day = date.getDate();
+// let day = 9;
 const caseDay = document.querySelector(`#case${day}`);
 const cases = document.querySelectorAll(".case");
 const viewAnimation = document.querySelector("#view-animation");
@@ -40,10 +40,16 @@ function showDefault(divCase) {
 // Changement de l'apparence de la case quand celle-ci a déjà été ouverte
 function caseDone(card, name, date) {
   card.classList.add("done");
-  card.innerHTML = `
-    <h3>${date}</h3>
+  if (date < 10) {
+    card.innerHTML = `
+    <h3>0${date}</h3>
     <p>par ${name}</>
   `;
+  } else {
+    card.innerHTML = `
+    <h3>${date}</h3>
+    <p>par ${name}</>`;
+  }
 }
 
 //-------------------------------------------------------------------------------------------
@@ -119,4 +125,28 @@ if (date2 < day) {
   card2.classList.add("lift");
 }
 
-// CASE 15 - Animation --------------------------------------------------------------------
+// CASE 9 - Animation --------------------------------------------------------------------
+const case9 = document.getElementById("case9");
+const card9 = case9.querySelector(".card");
+let toggleCard9 = 0;
+// Quand la date est passée
+if (day > 9) {
+  card9.classList.add("card9-done");
+  card9.innerHTML = `
+    <h3>09</h3>
+    <p>par Hugo</>`;
+  card9.style.backgroundColor = "#4b2142";
+}
+// Ouverture de la carte et découverte de l'animation
+// Ajout d'un id sur la card pour venir annuler et remplacer l'effet de la classe .lift
+if (day >= 9) {
+  case9.addEventListener("click", () => {
+    if (toggleCard9 == 0) {
+      card9.setAttribute("id", "card9");
+      toggleCard9 = 1;
+    } else {
+      card9.removeAttribute("id");
+      toggleCard9 = 0;
+    }
+  });
+}

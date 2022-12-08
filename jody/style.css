@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.calendrier-case6 {
+  background-color: green;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.porte6 {
+  /* cursor: pointer; */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 120px;
+  height: 155px;
+  transform-origin: left;
+  transition: all 0.5s ease-in-out;
+}
+
+.ouverture {
+  transform: rotateY(-160deg) !important;
+}
+
+.message6 {
+  color: white;
+  text-align: center;
+}

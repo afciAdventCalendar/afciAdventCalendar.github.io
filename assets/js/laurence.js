@@ -19,12 +19,12 @@ const card4HTML = `
           </div>
         </div>
   `;
-let toggleCard10 = 0;
+let toggleCard4 = 0;
 // Quand la date est passée
 if (day > 4) {
   card4.classList.add("card4-done");
   card4.innerHTML = `
-    <h3>4</h3>
+    <h3>04</h3>
     <p>par Laurence</>`;
   card4.style.backgroundColor = "#4b2142";
 }
@@ -32,12 +32,12 @@ if (day > 4) {
 // Ouverture de la carte et découverte de l'animation
 // Ajout d'un id sur la card pour venir annuler et remplacer l'effet de la classe .lift
 case4.addEventListener("click", () => {
-  if (toggleCard10 == 0) {
+  if (toggleCard4 == 0) {
     card4.setAttribute("id", "card4");
-    toggleCard10 = 1;
+    toggleCard4 = 1;
   } else {
     card4.removeAttribute("id");
-    toggleCard10 = 0;
+    toggleCard4 = 0;
   }
 });
 
