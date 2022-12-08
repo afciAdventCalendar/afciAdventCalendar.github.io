@@ -23,11 +23,29 @@
   transition: all 0.5s ease-in-out;
 }
 
-.ouverture {
+.ouverture,
+#card6 {
   transform: rotateY(-160deg) !important;
 }
 
 .message6 {
-  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+  color: black;
   text-align: center;
+  padding: 1rem;
+}
+.card6-done p {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
+#case6 .card-content {
+  background-image: url(https://c.ndtvimg.com/2021-10/n3amt0b_gifts650_625x300_19_October_21.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=886);
+}
+@media screen and (min-width: 48rem) {
+  .message6 {
+    padding: 0;
+  }
 }
