@@ -56,3 +56,24 @@ close.addEventListener("click", () => {
   // mise à jour du contenu de la face
   caseDone(card10, "Louis", 10);
 });
+let toggleCard10 = 0;
+// Quand la date est passée
+if (day > 10) {
+  card10.classList.add("card-done");
+  card10.innerHTML = `
+    <h3>10</h3>
+    <p>par Louis</>`;
+}
+// Ouverture de la carte et découverte de l'animation
+// Ajout d'un id sur la card pour venir annuler et remplacer l'effet de la classe .lift
+if (day >= 10) {
+  case10.addEventListener("click", () => {
+    if (toggleCard10 == 0) {
+      card10.setAttribute("id", "card10");
+      toggleCard9 = 1;
+    } else {
+      card10.removeAttribute("id");
+      toggleCard10 = 0;
+    }
+  });
+}

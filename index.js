@@ -51,6 +51,26 @@ function caseDone(card, name, date) {
     <p>par ${name}</>`;
   }
 }
+for (let i = 0; i < 24; i++) {
+  for (let j = 1; j <= 24; j++) {
+    const caseDay = document.querySelector(`#case${j}`);
+    const cardDay = caseDay.querySelector(".card");
+    if (j < day) {
+      // let p = 3 * i + 1;
+      // let y = 3 * i + 2;
+      // let b = 3 * i;
+      if (j == 3 * i + 1) {
+        cardDay.style.backgroundColor = "#4b2142";
+      } else if (j == 3 * i + 2) {
+        cardDay.style.backgroundColor = "#e8c547";
+      } else if (j == 3 * i) {
+        cardDay.style.backgroundColor = "#285460";
+      }
+    } else {
+      cardDay.style.backgroundColor = "#eb6d13";
+    }
+  }
+}
 
 //-------------------------------------------------------------------------------------------
 //------------------ LES ANIMATIONS ---------------------------------------------------------
@@ -131,11 +151,10 @@ const card9 = case9.querySelector(".card");
 let toggleCard9 = 0;
 // Quand la date est passée
 if (day > 9) {
-  card9.classList.add("card9-done");
+  card9.classList.add("card-done");
   card9.innerHTML = `
     <h3>09</h3>
     <p>par Hugo</>`;
-  card9.style.backgroundColor = "#4b2142";
 }
 // Ouverture de la carte et découverte de l'animation
 // Ajout d'un id sur la card pour venir annuler et remplacer l'effet de la classe .lift

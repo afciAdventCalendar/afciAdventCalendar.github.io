@@ -8,7 +8,6 @@
       porte6.innerHTML = `
             <h3>06</h3>
              <p>par Jody</>`;
-      porte6.style.backgroundColor = "#4b2142";
     }
     elements.forEach((elem) => {
       elem.addEventListener("click", () => {

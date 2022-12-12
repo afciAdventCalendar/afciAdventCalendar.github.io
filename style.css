@@ -128,6 +128,12 @@ main {
 .done {
   backface-visibility: hidden;
 }
+.card-done p {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
 .done p {
   position: absolute;
   bottom: 20px;
