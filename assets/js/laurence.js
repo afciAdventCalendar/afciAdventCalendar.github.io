@@ -1,5 +1,81 @@
 date = new Date();
 day = date.getDate();
+// CASE 11 -----------------------------------------------
+const case11 = document.getElementById("case11");
+const card11 = case11.querySelector(".card");
+const card11Container = case11.querySelector(".card-container");
+const card11HTML = `
+        <div class="card11-container">
+          <div class="card-content">
+            <div class="close">
+              <div class="cross"></div>
+              <div class="cross"></div>
+            </div>
+            <h2>XOXO</h2>
+          </div>
+        </div>
+`;
+let toggleCard11 = 0;
+// Quand la date est passée
+if (day > 11) {
+  card11.classList.add("card-done");
+  card11.innerHTML = `
+  <div class="card-front">
+    <h3>11</h3>
+    <p>par Laurence</>
+  </div>
+  <div class="card-back"></div>
+    `;
+}
+// Ouverture de la carte et découverte de l'animation
+// Ajout d'un id sur la card pour venir annuler et remplacer l'effet de la classe .lift
+case11.addEventListener("click", () => {
+  if (toggleCard11 == 0) {
+    toggleCard11 = 1;
+    card11.classList.remove("lift");
+    card11.style.transformOrigin = "center";
+    card11.setAttribute("id", "card11");
+    let anim = card11.animate(
+      { transform: ["rotateY(0)", "rotateY(-1080deg)"] },
+      { duration: 1000, fill: "forwards" }
+    );
+    setTimeout(() => {
+      card11.style.opacity = 0;
+      anim.cancel();
+      card11Container.style.zIndex = 10;
+    }, 1000);
+  } else {
+    toggleCard11 = 0;
+    if (window.innerWidth <= 900) {
+      closeCard11();
+    }
+  }
+});
+function closeCard11() {
+  card11.removeAttribute("id");
+  card11.style.transformOrigin = "center";
+  card11.style.opacity = 1;
+  card11.classList.add("lift");
+  card11.style.transformOrigin = "top left";
+}
+// Si l'utilisateur n'est pas sur un smartphone
+// Mise en plein écran via la div viewAnimation
+if (window.innerWidth > 900) {
+  card11Container.addEventListener("click", () => {
+    console.log("test");
+    viewAnimation.innerHTML = card11HTML;
+    viewAnimation.style.display = "block";
+    const closer = document.querySelector(".close");
+    closer.addEventListener("click", () => {
+      viewAnimation.innerHTML = "";
+      viewAnimation.style.display = "none";
+      card11Container.style.zIndex = 0;
+      closeCard11();
+    });
+  });
+}
+
+// CASE 4 ------------------------------------------------
 const case4 = document.getElementById("case4");
 const card4 = case4.querySelector(".card");
 const card4HTML = `

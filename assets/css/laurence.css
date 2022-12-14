@@ -1,3 +1,39 @@
+/* Carte 11 ---------------------------------------------- */
+#card11 {
+  /* transform: rotateY(-360deg); */
+  transform-origin: center;
+}
+.card11 {
+  transition: all 1s ease-in-out !important;
+}
+.card11 .card-front {
+  backface-visibility: hidden;
+}
+.card11 .card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #d9f5f0;
+  transform: rotateY(-180deg);
+}
+/* #case11 .card-container {
+  z-index: 10;
+} */
+#case11 .card-content,
+#view-animation .card11-container .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#view-animation .card11-container .card-content {
+  height: 100vh;
+  background-color: #e8c547;
+}
+/* Carte 4 ------------------------------------------------*/
 #card4 {
   transform: rotateX(120deg) rotateY(-60deg) rotateZ(10deg);
 }

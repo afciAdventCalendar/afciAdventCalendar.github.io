@@ -28,9 +28,9 @@ const card5HTML = `
 let toggleCard5 = 0;
 // Quand la date est passée
 if (day > 5) {
-  card5.classList.add("card4-done");
+  card5.classList.add("card-done");
   card5.innerHTML = `
-    <h3>4</h3>
+    <h3>05</h3>
     <p>par Merlin</>`;
   card5.style.backgroundColor = "#e8c547";
 }
