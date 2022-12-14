@@ -34,3 +34,24 @@ function animkb() {
 carte3.innerHTML = `<div class="card done lift"><h3>03</h3><p>par Kévin B.</></div>`;
 const carte3Content = carte3.querySelector(".card");
 carte3Content.style.backgroundColor = "#285460";
+
+// deuxième carte
+const case15 = document.querySelector("#case15");
+const case15cont = document.querySelector("#case15 div .card-content");
+const case15card = document.querySelector("#case15 .card");
+const jono = new Audio("/assets/music/jono.mp3");
+var musickb = false;
+
+if (day > 15) {
+  case15.addEventListener("click", () => {
+    case15card.classList.toggle("ld-vanish");
+    console.log(musickb);
+    if (musickb == false) {
+      jono.play();
+      musickb = true;
+    } else {
+      jono.pause();
+      musickb = false;
+    }
+  });
+}

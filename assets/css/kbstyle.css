@@ -3,21 +3,6 @@
   src: url("./assets/font/christmas.otf");
 }
 
-/* body{
-    height: 100%;
-    width: 100%
-}
-
-#card{
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background-color: brown;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-} */
-
 #KB_div {
   background-image: url("../img/bgnoel.jpg");
   background-position: center;
@@ -151,5 +136,29 @@
     height: 300px;
     width: 200px;
     opacity: 100%;
+  }
+}
+
+/* deuxième carte */
+#case15 .card-content {
+  background-image: url("../img/johnny-noel.gif");
+  background-position: center;
+  background-size: cover;
+}
+
+#case15 .card {
+  transform: rotate(0deg), translate(0px, 0px);
+}
+
+.animkb2 {
+  animation: animkb2 2s ease-in forwards;
+}
+
+@keyframes animkb2 {
+  from {
+    transform: rotate(0deg), translate(0px, 0px);
+  }
+  to {
+    transform: rotate(360deg), translate(-150px, -150px);
   }
 }
