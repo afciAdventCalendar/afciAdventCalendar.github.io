@@ -1,0 +1,67 @@
+#case16 {
+  position: relative;
+}
+#case16 > .card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#case16 h4 {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  text-align: center;
+}
+#case16 svg {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  aspect-ratio: 1/1;
+}
+#case16 > .jb16ancien {
+  z-index: 11;
+}
+#case17 .card-content {
+  background-color: rgb(125, 203, 132);
+}
+#case17 .jb17Wrap {
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+#case17 .jb17Wrap:hover {
+  color: red;
+}
+.jb17wrapperPaper {
+  display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+  grid-template-rows: repeat(5, 20%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: top 1s;
+  width: 80%;
+  border-radius: 25px;
+  background-color: rgba(123, 127, 131, 0.713);
+  backdrop-filter: blur(25px) saturate(99%);
+}
+.jb17bubble {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2vmin;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.305),
+    5px 5px 5px rgba(255, 255, 255, 0.453) inset;
+  background-color: rgba(255, 255, 255, 0.168);
+  backdrop-filter: blur(5px) saturate(99%);
+}
