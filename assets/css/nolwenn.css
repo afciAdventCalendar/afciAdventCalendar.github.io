@@ -1,0 +1,18 @@
+#case24 .card{
+    display: none;
+}
+.nwm-card{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+.nwm-front, .nwm-back{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.nwm-back{
+    background-color: #eb6d13;
+}
