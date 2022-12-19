@@ -1,0 +1,745 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card21-container {
+  height: 100%;
+}
+.card21-container .card-content {
+  height: 100%;
+}
+.snowContainerKL {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url(/assets/img/Royal.jpg);
+}
+
+/* Snowfalling pure css */
+.snowKL,
+.snowKL:before,
+.snowKL:after {
+  position: absolute;
+  top: -650px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+    radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 250px, #fff 50%, transparent),
+    radial-gradient(4px 4px at 400px 350px, #fff 50%, transparent),
+    radial-gradient(6px 6px at 500px 100px, #fff 50%, transparent),
+    radial-gradient(3px 3px at 50px 200px, #fff 50%, transparent),
+    radial-gradient(4px 4px at 150px 300px, #fff 50%, transparent),
+    radial-gradient(6px 6px at 250px 400px, #fff 50%, transparent),
+    radial-gradient(3px 3px at 350px 500px, #fff 50%, transparent);
+  background-size: 650px 650px;
+  animation: snow 3s linear infinite;
+  content: "";
+}
+
+/* Snowfalling smoother */
+.snowKL:after {
+  margin-left: -250px;
+  opacity: 0.5;
+  filter: blur(2px);
+  animation-duration: 6s;
+  animation-direction: reverse;
+}
+
+.snowKL:before {
+  margin-left: -350px;
+  opacity: 0.7;
+  filter: blur(1px);
+  animation-duration: 9s;
+  animation-direction: reverse;
+}
+
+/* Text css + animation light on them */
+#case21 span {
+  color: white;
+  font-size: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -50%);
+}
+
+#case21 span:nth-child(2n) {
+  animation: red-light 1s infinite;
+  animation-delay: 1s;
+}
+#case21 span:nth-child(2n + 1) {
+  animation: green-light 1s infinite;
+  animation-delay: 1s;
+}
+
+/* Img Santa outside of the screen */
+#SantaKL {
+  position: absolute;
+  transform: rotateY(160deg);
+  left: -100%;
+  /* animation: move linear 5s ; */
+}
+
+/* Css for img and button */
+.clickKL {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.b1KL {
+  z-index: 1000;
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+.b1KL:hover {
+  background-color: black;
+}
+.giftKL {
+  z-index: 1000;
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  width: 80%;
+}
+.treeKL {
+  position: absolute;
+  top: 38%;
+  left: 2%;
+}
+.snowManKL {
+  position: absolute;
+  top: 57.8%;
+  left: 70%;
+}
+.snowManKL img {
+  width: 100%;
+}
+#GiftKL {
+  width: 20%;
+  animation: boxBounce 1s infinite;
+}
+/* Falling snow animation */
+@keyframes snow {
+  to {
+    transform: translateY(650px);
+  }
+}
+
+/* Redlight for text */
+@keyframes red-light {
+  0% {
+    color: red;
+  }
+  100% {
+    color: rgb(255, 79, 79);
+  }
+}
+/* Greenlght for text */
+@keyframes green-light {
+  0% {
+    color: green;
+  }
+  100% {
+    color: rgb(43, 255, 43);
+  }
+}
+
+/* Animation css santa moving */
+/* @keyframes move {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%
+    }
+} */
+
+/* Animation gift bouncing */
+@keyframes boxBounce {
+  from,
+  50% {
+    transform: translateY(0) scale(1, 1);
+  }
+  62.5% {
+    transform: translateY(4%) scale(1.12, 0.89);
+  }
+  75% {
+    transform: translateY(-11%) scale(0.92, 1.1);
+  }
+  87.5% {
+    transform: translateY(0) scale(1.05, 0.9);
+  }
+  to {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+/* Media queries from Hell */
+@media screen and (max-width: 375px) {
+  .snowManKL {
+    top: 84%;
+    left: 50%;
+  }
+  .treeKL img {
+    width: 50%;
+  }
+  .treeKL {
+    top: 74%;
+    left: -6%;
+  }
+  .giftKL {
+    top: 95%;
+    left: 10%;
+    width: 100%;
+  }
+  .SantaKL {
+    width: 100%;
+    top: 5%;
+  }
+  #case21 span:nth-child(1) {
+    left: 35%;
+    top: 25%;
+  }
+  #case21 span:nth-child(2) {
+    left: 41%;
+    top: 25%;
+  }
+  #case21 span:nth-child(3) {
+    left: 54%;
+    top: 25%;
+  }
+  #case21 span:nth-child(4) {
+    left: 1%;
+    top: 35%;
+  }
+  #case21 span:nth-child(5) {
+    left: 13%;
+    top: 35%;
+  }
+  #case21 span:nth-child(6) {
+    left: 25%;
+    top: 35%;
+  }
+  #case21 span:nth-child(7) {
+    left: 38%;
+    top: 35%;
+  }
+  #case21 span:nth-child(8) {
+    left: 43%;
+    top: 35%;
+  }
+  #case21 span:nth-child(9) {
+    left: 52%;
+    top: 35%;
+  }
+  #case21 span:nth-child(10) {
+    left: 63%;
+    top: 35%;
+  }
+  #case21 span:nth-child(11) {
+    left: 78%;
+    top: 35%;
+  }
+  #case21 span:nth-child(12) {
+    left: 90%;
+    top: 35%;
+  }
+  #case21 span:nth-child(13) {
+    left: 18%;
+    top: 45%;
+  }
+  #case21 span:nth-child(14) {
+    left: 28%;
+    top: 45%;
+  }
+  #case21 span:nth-child(15) {
+    left: 38%;
+    top: 45%;
+  }
+  #case21 span:nth-child(16) {
+    left: 50%;
+    top: 45%;
+  }
+  #case21 span:nth-child(17) {
+    left: 59%;
+    top: 45%;
+  }
+  #case21 span:nth-child(18) {
+    left: 70%;
+    top: 45%;
+  }
+}
+@media screen and (min-width: 376px) {
+  .snowManKL {
+    top: 78%;
+    left: 55%;
+  }
+  .treeKL img {
+    width: 50%;
+  }
+  .treeKL {
+    top: 70%;
+    left: 0%;
+  }
+  .giftKL {
+    top: 90%;
+    left: 8%;
+    width: 120%;
+  }
+  .SantaKL {
+    width: 80%;
+  }
+  #case21 span:nth-child(1) {
+    left: 36%;
+    top: 25%;
+  }
+  #case21 span:nth-child(2) {
+    left: 42%;
+    top: 25%;
+  }
+  #case21 span:nth-child(3) {
+    left: 52%;
+    top: 25%;
+  }
+  #case21 span:nth-child(4) {
+    left: 5%;
+    top: 35%;
+  }
+  #case21 span:nth-child(5) {
+    left: 16%;
+    top: 35%;
+  }
+  #case21 span:nth-child(6) {
+    left: 28%;
+    top: 35%;
+  }
+  #case21 span:nth-child(7) {
+    left: 39%;
+    top: 35%;
+  }
+  #case21 span:nth-child(8) {
+    left: 44%;
+    top: 35%;
+  }
+  #case21 span:nth-child(9) {
+    left: 52%;
+    top: 35%;
+  }
+  #case21 span:nth-child(10) {
+    left: 62%;
+    top: 35%;
+  }
+  #case21 span:nth-child(11) {
+    left: 76%;
+    top: 35%;
+  }
+  #case21 span:nth-child(12) {
+    left: 87%;
+    top: 35%;
+  }
+  #case21 span:nth-child(13) {
+    left: 20%;
+    top: 45%;
+  }
+  #case21 span:nth-child(14) {
+    left: 29%;
+    top: 45%;
+  }
+  #case21 span:nth-child(15) {
+    left: 39%;
+    top: 45%;
+  }
+  #case21 span:nth-child(16) {
+    left: 51%;
+    top: 45%;
+  }
+  #case21 span:nth-child(17) {
+    left: 60%;
+    top: 45%;
+  }
+  #case21 span:nth-child(18) {
+    left: 71%;
+    top: 45%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .snowManKL {
+    top: 80%;
+    left: 75%;
+  }
+  .snowManKL img {
+    width: 100%;
+  }
+  .treeKL img {
+    width: 60%;
+  }
+  .treeKL {
+    top: 63%;
+    left: 0%;
+  }
+  .giftKL {
+    top: 90%;
+    left: 8%;
+    width: 80%;
+  }
+  .SantaKL {
+    width: 50%;
+  }
+  #case21 span:nth-child(1) {
+    left: 43%;
+    top: 25%;
+  }
+  #case21 span:nth-child(2) {
+    left: 46%;
+    top: 25%;
+  }
+  #case21 span:nth-child(3) {
+    left: 51%;
+    top: 25%;
+  }
+  #case21 span:nth-child(4) {
+    left: 27%;
+    top: 35%;
+  }
+  #case21 span:nth-child(5) {
+    left: 33%;
+    top: 35%;
+  }
+  #case21 span:nth-child(6) {
+    left: 39%;
+    top: 35%;
+  }
+  #case21 span:nth-child(7) {
+    left: 45%;
+    top: 35%;
+  }
+  #case21 span:nth-child(8) {
+    left: 48%;
+    top: 35%;
+  }
+  #case21 span:nth-child(9) {
+    left: 53%;
+    top: 35%;
+  }
+  #case21 span:nth-child(10) {
+    left: 58%;
+    top: 35%;
+  }
+  #case21 span:nth-child(11) {
+    left: 65%;
+    top: 35%;
+  }
+  #case21 span:nth-child(12) {
+    left: 70%;
+    top: 35%;
+  }
+  #case21 span:nth-child(13) {
+    left: 35%;
+    top: 45%;
+  }
+  #case21 span:nth-child(14) {
+    left: 40%;
+    top: 45%;
+  }
+  #case21 span:nth-child(15) {
+    left: 45%;
+    top: 45%;
+  }
+  #case21 span:nth-child(16) {
+    left: 51%;
+    top: 45%;
+  }
+  #case21 span:nth-child(17) {
+    left: 55%;
+    top: 45%;
+  }
+  #case21 span:nth-child(18) {
+    left: 60%;
+    top: 45%;
+  }
+}
+@media (min-width: 1024px) {
+  .snowManKL {
+    top: 72%;
+    left: 75%;
+  }
+  .snowManKL img {
+    width: 100%;
+  }
+  .treeKL img {
+    width: 70%;
+  }
+  .treeKL {
+    top: 53%;
+    left: 0%;
+  }
+  .giftKL {
+    top: 80%;
+    left: 3%;
+    width: 100%;
+  }
+  .SantaKL {
+    width: 50%;
+  }
+  #case21 span:nth-child(1) {
+    left: 44%;
+    top: 25%;
+  }
+  #case21 span:nth-child(2) {
+    left: 46%;
+    top: 25%;
+  }
+  #case21 span:nth-child(3) {
+    left: 50%;
+    top: 25%;
+  }
+  #case21 span:nth-child(4) {
+    left: 31%;
+    top: 35%;
+  }
+  #case21 span:nth-child(5) {
+    left: 35%;
+    top: 35%;
+  }
+  #case21 span:nth-child(6) {
+    left: 40%;
+    top: 35%;
+  }
+  #case21 span:nth-child(7) {
+    left: 44%;
+    top: 35%;
+  }
+  #case21 span:nth-child(8) {
+    left: 46%;
+    top: 35%;
+  }
+  #case21 span:nth-child(9) {
+    left: 49%;
+    top: 35%;
+  }
+  #case21 span:nth-child(10) {
+    left: 53%;
+    top: 35%;
+  }
+  #case21 span:nth-child(11) {
+    left: 58%;
+    top: 35%;
+  }
+  #case21 span:nth-child(12) {
+    left: 62%;
+    top: 35%;
+  }
+  #case21 span:nth-child(13) {
+    left: 38%;
+    top: 45%;
+  }
+  #case21 span:nth-child(14) {
+    left: 41%;
+    top: 45%;
+  }
+  #case21 span:nth-child(15) {
+    left: 45%;
+    top: 45%;
+  }
+  #case21 span:nth-child(16) {
+    left: 49%;
+    top: 45%;
+  }
+  #case21 span:nth-child(17) {
+    left: 52%;
+    top: 45%;
+  }
+  #case21 span:nth-child(18) {
+    left: 56%;
+    top: 45%;
+  }
+}
+@media (min-width: 1440px) {
+  .snowManKL {
+    top: 62%;
+    left: 75%;
+  }
+  .snowManKL img {
+    width: 100%;
+  }
+  .treeKL img {
+    width: 78%;
+  }
+  .treeKL {
+    top: 49%;
+    left: 0%;
+  }
+  .giftKL {
+    top: 81%;
+    left: 3%;
+    width: 70%;
+  }
+  .SantaKL {
+    width: 40%;
+  }
+  #case21 span:nth-child(1) {
+    left: 46%;
+    top: 25%;
+  }
+  #case21 span:nth-child(2) {
+    left: 48%;
+    top: 25%;
+  }
+  #case21 span:nth-child(3) {
+    left: 52%;
+    top: 25%;
+  }
+  #case21 span:nth-child(4) {
+    left: 37%;
+    top: 35%;
+  }
+  #case21 span:nth-child(5) {
+    left: 40%;
+    top: 35%;
+  }
+  #case21 span:nth-child(6) {
+    left: 44%;
+    top: 35%;
+  }
+  #case21 span:nth-child(7) {
+    left: 47%;
+    top: 35%;
+  }
+  #case21 span:nth-child(8) {
+    left: 49%;
+    top: 35%;
+  }
+  #case21 span:nth-child(9) {
+    left: 52%;
+    top: 35%;
+  }
+  #case21 span:nth-child(10) {
+    left: 55%;
+    top: 35%;
+  }
+  #case21 span:nth-child(11) {
+    left: 59%;
+    top: 35%;
+  }
+  #case21 span:nth-child(12) {
+    left: 62%;
+    top: 35%;
+  }
+  #case21 span:nth-child(13) {
+    left: 41%;
+    top: 45%;
+  }
+  #case21 span:nth-child(14) {
+    left: 44%;
+    top: 45%;
+  }
+  #case21 span:nth-child(15) {
+    left: 47%;
+    top: 45%;
+  }
+  #case21 span:nth-child(16) {
+    left: 51%;
+    top: 45%;
+  }
+  #case21 span:nth-child(17) {
+    left: 54%;
+    top: 45%;
+  }
+  #case21 span:nth-child(18) {
+    left: 58%;
+    top: 45%;
+  }
+}
+@media (min-width: 1920px) {
+  .snowManKLKL {
+    top: 65%;
+    left: 75%;
+  }
+  .snowManKL img {
+    width: 100%;
+  }
+  .treeKL img {
+    width: 100%;
+  }
+  .treeKL {
+    top: 40%;
+    left: 0%;
+  }
+  .giftKL {
+    top: 81%;
+    left: 3%;
+    width: 80%;
+  }
+  .SantaKL {
+    width: 40%;
+  }
+  #case21 span:nth-child(1) {
+    left: 20%;
+  }
+  #case21 span:nth-child(2) {
+    left: 22%;
+  }
+  #case21 span:nth-child(3) {
+    left: 25%;
+  }
+  #case21 span:nth-child(4) {
+    left: 31%;
+  }
+  #case21 span:nth-child(5) {
+    left: 34%;
+  }
+  #case21 span:nth-child(6) {
+    left: 37%;
+  }
+  #case21 span:nth-child(7) {
+    left: 40%;
+  }
+  #case21 span:nth-child(8) {
+    left: 42%;
+  }
+  #case21 span:nth-child(9) {
+    left: 45%;
+  }
+  #case21 span:nth-child(10) {
+    left: 48%;
+  }
+  #case21 span:nth-child(11) {
+    left: 51.5%;
+  }
+  #case21 span:nth-child(12) {
+    left: 54.5%;
+  }
+  #case21 span:nth-child(13) {
+    left: 60%;
+  }
+  #case21 span:nth-child(14) {
+    left: 63%;
+  }
+  #case21 span:nth-child(15) {
+    left: 66%;
+  }
+  #case21 span:nth-child(16) {
+    left: 69%;
+  }
+  #case21 span:nth-child(17) {
+    left: 72%;
+  }
+  #case21 span:nth-child(18) {
+    left: 75%;
+  }
+}

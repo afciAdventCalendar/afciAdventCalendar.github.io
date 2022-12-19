@@ -1,7 +1,7 @@
 "use strict";
 const date = new Date();
 let day = date.getDate();
-// let day = 9;
+// let day = 21;
 const caseDay = document.querySelector(`#case${day}`);
 const cases = document.querySelectorAll(".case");
 const viewAnimation = document.querySelector("#view-animation");
