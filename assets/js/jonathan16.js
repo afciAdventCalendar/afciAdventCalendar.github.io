@@ -1,4 +1,12 @@
 "use strict";
+const card16 = document.querySelector("#case16 .card");
+// Quand la date est passée
+if (day > 4) {
+  card16.classList.add("card-done", "lift");
+  card16.innerHTML = `
+    <h3>16</h3>
+    <p>par Jonathan</>`;
+}
 const jb16case16 = document.querySelector(`#case16`);
 let jb16postIt = jb16case16.querySelector(`.card`);
 let jb16alea1 = Math.floor(Math.random() * -50 - 51);
@@ -13,43 +21,53 @@ let jb16alea9 = Math.floor(Math.random() * 40 + 41);
 let jb16alea10 = Math.floor(Math.random() * 100);
 let jb16contenu = `<h3>16</h3>`;
 let jb16animation = {
+  top: [`50%`, `${jb16alea1}%`, `500%`],
+  left: [`50%`, `${jb16alea2}%`, `${jb16alea3}%`],
+  transform: [
+    `translate(-50%, -50%) rotate(0) rotateX(0) rotateY(0)`,
+    `translate(-50%, -50%) rotate(${jb16alea4 / 2}deg) rotateX(${
+      jb16alea5 / 2
+    }deg) rotateY(${jb16alea6 / 2}deg)`,
+    `translate(-50%, -50%) rotate(${jb16alea4}deg) rotateY(${jb16alea6}deg) rotateX(${jb16alea5}deg)`,
+  ],
+};
+let jb16options = {
+  duration: 1000,
+  fill: "forwards",
+};
+function jb16lancePostIt() {
+  jb16alea1 = Math.floor(Math.random() * -50 - 51);
+  jb16alea2 = Math.floor(Math.random() * 150 - 49);
+  jb16alea3 = jb16alea2 * Math.floor(Math.random() * 3 + 1);
+  jb16alea4 = Math.floor(Math.random() * 180 - 89);
+  jb16alea5 = Math.floor(Math.random() * 180 - 89);
+  jb16alea6 = Math.floor(Math.random() * 180 - 89);
+  jb16alea7 = Math.floor(Math.random() * 359);
+  jb16alea8 = Math.floor(Math.random() * 40 + 31);
+  jb16alea9 = Math.floor(Math.random() * 40 + 31);
+  jb16alea10 = Math.floor(Math.random() * 101);
+  jb16animation = {
     top: [`50%`, `${jb16alea1}%`, `500%`],
     left: [`50%`, `${jb16alea2}%`, `${jb16alea3}%`],
-    transform: [`translate(-50%, -50%) rotate(0) rotateX(0) rotateY(0)`, `translate(-50%, -50%) rotate(${jb16alea4 / 2}deg) rotateX(${jb16alea5 / 2}deg) rotateY(${jb16alea6 / 2}deg)`, `translate(-50%, -50%) rotate(${jb16alea4}deg) rotateY(${jb16alea6}deg) rotateX(${jb16alea5}deg)`]
-}
-let jb16options = {
-    duration: 1000,
-    fill: "forwards",
-}
-function jb16lancePostIt() {
-    jb16alea1 = Math.floor(Math.random() * -50 - 51);
-    jb16alea2 = Math.floor(Math.random() * 150 - 49);
-    jb16alea3 = jb16alea2 * Math.floor(Math.random() * 3 + 1);
-    jb16alea4 = Math.floor(Math.random() * 180 - 89);
-    jb16alea5 = Math.floor(Math.random() * 180 - 89);
-    jb16alea6 = Math.floor(Math.random() * 180 - 89);
-    jb16alea7 = Math.floor(Math.random() * 359);
-    jb16alea8 = Math.floor(Math.random() * 40 + 31);
-    jb16alea9 = Math.floor(Math.random() * 40 + 31);
-    jb16alea10 = Math.floor(Math.random() * 101);
-    jb16animation = {
-        top: [`50%`, `${jb16alea1}%`, `500%`],
-        left: [`50%`, `${jb16alea2}%`, `${jb16alea3}%`],
-        transform: [`translate(-50%, -50%) rotate(0) rotateX(0) rotateY(0)`, `translate(-50%, -50%) rotate(${jb16alea4 / 2}deg) rotateX(${jb16alea5 / 2}deg) rotateY(${jb16alea6 / 2}deg)`, `translate(-50%, -50%) rotate(${jb16alea4}deg) rotateY(${jb16alea6}deg) rotateX(${jb16alea5}deg)`]
-    }
-    let jb16nouveauPostIt = document.createElement(`div`);
-    console.log(jb16alea10);
-    jb16nouveauPostIt.classList.add(`card`);
-    if (jb16alea10 < 50) {
-        jb16contenu = `<h3>16</h3>`;
-    }
-    else if (jb16alea10 < 59) {
-        jb16contenu = `<h3>16</h3><h4>Meilleurs voeux</h4>`;
-    }
-    else if (jb16alea10 < 69) {
-        jb16contenu = `<h3>16</h3><h4>Joyeuses Fêtes</h4>`;
-    } else if (jb16alea10 < 79) {
-        jb16contenu =/*HTML*/`
+    transform: [
+      `translate(-50%, -50%) rotate(0) rotateX(0) rotateY(0)`,
+      `translate(-50%, -50%) rotate(${jb16alea4 / 2}deg) rotateX(${
+        jb16alea5 / 2
+      }deg) rotateY(${jb16alea6 / 2}deg)`,
+      `translate(-50%, -50%) rotate(${jb16alea4}deg) rotateY(${jb16alea6}deg) rotateX(${jb16alea5}deg)`,
+    ],
+  };
+  let jb16nouveauPostIt = document.createElement(`div`);
+  console.log(jb16alea10);
+  jb16nouveauPostIt.classList.add(`card`);
+  if (jb16alea10 < 50) {
+    jb16contenu = `<h3>16</h3>`;
+  } else if (jb16alea10 < 59) {
+    jb16contenu = `<h3>16</h3><h4>Meilleurs voeux</h4>`;
+  } else if (jb16alea10 < 69) {
+    jb16contenu = `<h3>16</h3><h4>Joyeuses Fêtes</h4>`;
+  } else if (jb16alea10 < 79) {
+    jb16contenu = /*HTML*/ `
         <h3>16</h3>
         <svg viewBox="0 0 593 593" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0_137_26" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="593" height="593">
@@ -69,8 +87,8 @@ function jb16lancePostIt() {
         </svg>
         <h4>Snowman's Land</h4>
     `;
-    } else if (jb16alea10 < 89) {
-    jb16contenu =/*HTML*/`
+  } else if (jb16alea10 < 89) {
+    jb16contenu = /*HTML*/ `
         <h3>16</h3>
         <svg viewBox="0 0 568 568" fill="none" xmlns="http://www.=w3.org/2000/svg">
         <mask id="path-1-inside-1_140_25" fill="white">
@@ -92,8 +110,8 @@ function jb16lancePostIt() {
         </svg>
         <h4>Reste Cool</h4>
     `;
-} else if (jb16alea10 < 99) {
-        jb16contenu =/*HTML*/`
+  } else if (jb16alea10 < 99) {
+    jb16contenu = /*HTML*/ `
             <h3>16</h3>
             <svg viewBox="0 0 532 532" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_146_73" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="532" height="532">
@@ -129,19 +147,21 @@ function jb16lancePostIt() {
             </svg>
             <h4 style="font-size:1rem">Un présent et on oublie le passé!</h4>
         `;
-    } else {
-        jb16contenu = `<h3>16</h3><br><p style="text-align:center">Cette carte est rare.<br><br>Elle n'a que 1% de chance d'apparaitre.</p>`;
-    }
-    jb16nouveauPostIt.innerHTML = `${jb16contenu}`;
-    jb16nouveauPostIt.style.backgroundColor = `hsl(${jb16alea7},${jb16alea8}%,${jb16alea9}%)`
-    case16.append(jb16nouveauPostIt);
-    jb16postIt.animate(jb16animation, jb16options);
-    jb16postIt.classList.add(`jb16ancien`);
-    jb16postIt = jb16nouveauPostIt
-    jb16postIt.addEventListener("click", jb16lancePostIt);
-    const jb16anciensPostIts = document.querySelectorAll(`.jb16ancien`);
-    jb16anciensPostIts.forEach(element => {
-        setTimeout(function () { element.remove() }, 1000);
-    });
+  } else {
+    jb16contenu = `<h3>16</h3><br><p style="text-align:center">Cette carte est rare.<br><br>Elle n'a que 1% de chance d'apparaitre.</p>`;
+  }
+  jb16nouveauPostIt.innerHTML = `${jb16contenu}`;
+  jb16nouveauPostIt.style.backgroundColor = `hsl(${jb16alea7},${jb16alea8}%,${jb16alea9}%)`;
+  case16.append(jb16nouveauPostIt);
+  jb16postIt.animate(jb16animation, jb16options);
+  jb16postIt.classList.add(`jb16ancien`);
+  jb16postIt = jb16nouveauPostIt;
+  jb16postIt.addEventListener("click", jb16lancePostIt);
+  const jb16anciensPostIts = document.querySelectorAll(`.jb16ancien`);
+  jb16anciensPostIts.forEach((element) => {
+    setTimeout(function () {
+      element.remove();
+    }, 1000);
+  });
 }
 jb16postIt.addEventListener("click", jb16lancePostIt);
