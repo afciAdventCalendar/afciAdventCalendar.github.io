@@ -1,10 +1,10 @@
-#case1 .thecard {
+#case1 .thecard ,#case14 .card{
   transition: all 1s ease;
 }
-#case1 .rotate {
+#case1 .rotate,#case14 .rotate {
   transform: rotateY(-180deg);
 }
-.g-thefront {
+.g-thefront ,#case14 .card {
   padding: 30px;
   position: absolute;
   top: 0px;
@@ -15,7 +15,7 @@
   color: #333;
   /* transform-origin: center; */
 }
-#case1 .theback {
+#case1 .theback,#case14 .card-content {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -25,6 +25,9 @@
   color: #333;
   transform: rotateY(180deg);
 }
+#case14 .card-content {
+  transform: initial;
+}
 #case1 .date {
   height: 40px;
   width: 40px;
@@ -32,13 +35,34 @@
   background-color: wheat;
   text-align: center;
 }
-#case1 img {
+#case1 img,#case14 .card-content img {
   width: 100%;
   height: 100%;
   position: absolute;
 }
 @media screen and (min-width: 48rem) {
-  .g-thefront {
+  .g-thefront,.card {
     padding: 20px;
   }
+}
+
+.plm{
+  
+  position: absolute;
+  top: 75%;
+  left: 20%;
+  width: 25%;
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+}
+.pam {
+  position: absolute;
+  top: 75%;
+  left: 60%;
+  width: 25%;
+  
+  background-color: white;
+  color: red;
+  border-radius: 10px;
 }

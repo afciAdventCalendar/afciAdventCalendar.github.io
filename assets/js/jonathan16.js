@@ -1,4 +1,11 @@
 "use strict";
+const card16 = document.querySelector("#case16 .card");
+if (day > 16) {
+  card16.classList.add("card-done", "lift");
+  card16.innerHTML = `
+       <h3>16</h3>
+     <p>par Jonathan</>`;
+}
 const jb16case16 = document.querySelector(`#case16`);
 let jb16postIt = jb16case16.querySelector(`.card`);
 let jb16alea1 = Math.floor(Math.random() * -50 - 51);
@@ -13,44 +20,54 @@ let jb16alea9 = Math.floor(Math.random() * 40 + 41);
 let jb16alea10 = Math.floor(Math.random() * 100);
 let jb16contenu = `<h3>16</h3>`;
 let jb16animation = {
+  top: [`50%`, `${jb16alea1}%`, `500%`],
+  left: [`50%`, `${jb16alea2}%`, `${jb16alea3}%`],
+  transform: [
+    `translate(-50%, -50%) rotate(0) rotateX(0) rotateY(0)`,
+    `translate(-50%, -50%) rotate(${jb16alea4 / 2}deg) rotateX(${
+      jb16alea5 / 2
+    }deg) rotateY(${jb16alea6 / 2}deg)`,
+    `translate(-50%, -50%) rotate(${jb16alea4}deg) rotateY(${jb16alea6}deg) rotateX(${jb16alea5}deg)`,
+  ],
+};
+let jb16options = {
+  duration: 1000,
+  fill: "forwards",
+};
+function jb16lancePostIt() {
+  jb16alea1 = Math.floor(Math.random() * -50 - 51);
+  jb16alea2 = Math.floor(Math.random() * 150 - 49);
+  jb16alea3 = jb16alea2 * Math.floor(Math.random() * 3 + 1);
+  jb16alea4 = Math.floor(Math.random() * 180 - 89);
+  jb16alea5 = Math.floor(Math.random() * 180 - 89);
+  jb16alea6 = Math.floor(Math.random() * 180 - 89);
+  jb16alea7 = Math.floor(Math.random() * 359);
+  jb16alea8 = Math.floor(Math.random() * 40 + 31);
+  jb16alea9 = Math.floor(Math.random() * 40 + 31);
+  jb16alea10 = Math.floor(Math.random() * 101);
+  jb16animation = {
     top: [`50%`, `${jb16alea1}%`, `500%`],
     left: [`50%`, `${jb16alea2}%`, `${jb16alea3}%`],
-    transform: [`translate(-50%, -50%) rotate(0) rotateX(0) rotateY(0)`, `translate(-50%, -50%) rotate(${jb16alea4 / 2}deg) rotateX(${jb16alea5 / 2}deg) rotateY(${jb16alea6 / 2}deg)`, `translate(-50%, -50%) rotate(${jb16alea4}deg) rotateY(${jb16alea6}deg) rotateX(${jb16alea5}deg)`]
-}
-let jb16options = {
-    duration: 1000,
-    fill: "forwards",
-}
-function jb16lancePostIt() {
-    jb16alea1 = Math.floor(Math.random() * -50 - 51);
-    jb16alea2 = Math.floor(Math.random() * 150 - 49);
-    jb16alea3 = jb16alea2 * Math.floor(Math.random() * 3 + 1);
-    jb16alea4 = Math.floor(Math.random() * 180 - 89);
-    jb16alea5 = Math.floor(Math.random() * 180 - 89);
-    jb16alea6 = Math.floor(Math.random() * 180 - 89);
-    jb16alea7 = Math.floor(Math.random() * 359);
-    jb16alea8 = Math.floor(Math.random() * 40 + 31);
-    jb16alea9 = Math.floor(Math.random() * 40 + 31);
-    jb16alea10 = Math.floor(Math.random() * 101);
-    jb16animation = {
-        top: [`50%`, `${jb16alea1}%`, `500%`],
-        left: [`50%`, `${jb16alea2}%`, `${jb16alea3}%`],
-        transform: [`translate(-50%, -50%) rotate(0) rotateX(0) rotateY(0)`, `translate(-50%, -50%) rotate(${jb16alea4 / 2}deg) rotateX(${jb16alea5 / 2}deg) rotateY(${jb16alea6 / 2}deg)`, `translate(-50%, -50%) rotate(${jb16alea4}deg) rotateY(${jb16alea6}deg) rotateX(${jb16alea5}deg)`]
-    }
-    let jb16nouveauPostIt = document.createElement(`div`);
-    console.log(jb16alea10);
-    jb16nouveauPostIt.classList.add(`card`);
-    if (jb16alea10 < 50) {
-        jb16contenu = `<h3>16</h3>`;
-    }
-    else if (jb16alea10 < 59) {
-        jb16contenu = `<h3>16</h3><h4>Meilleurs voeux</h4>`;
-    }
-    else if (jb16alea10 < 69) {
-        jb16contenu = `<h3>16</h3><h4>Joyeuses Fêtes</h4>`;
-    } else if (jb16alea10 < 79) {
-        jb16contenu =/*HTML*/`
-        <h3>16</h3>
+    transform: [
+      `translate(-50%, -50%) rotate(0) rotateX(0) rotateY(0)`,
+      `translate(-50%, -50%) rotate(${jb16alea4 / 2}deg) rotateX(${
+        jb16alea5 / 2
+      }deg) rotateY(${jb16alea6 / 2}deg)`,
+      `translate(-50%, -50%) rotate(${jb16alea4}deg) rotateY(${jb16alea6}deg) rotateX(${jb16alea5}deg)`,
+    ],
+  };
+  let jb16nouveauPostIt = document.createElement(`div`);
+  jb16nouveauPostIt.classList.add(`card`);
+  if (jb16alea10 < 50) {
+    jb16contenu = `<h3>16</h3><p style="color: white;position: absolute;bottom: 20px;right: 20px">par Jonathan</p>`;
+  } else if (jb16alea10 < 59) {
+    jb16contenu = `<h4 style="z-index: -1">Meilleurs voeux</h4>
+        <h3>16</h3><p style="z-index: 1;color: white;position: absolute;bottom: 20px;right: 20px">par Jonathan</p>`;
+  } else if (jb16alea10 < 69) {
+    jb16contenu = `<h4 style="z-index: -1">Joyeuses Fêtes</h4>
+        <h3>16</h3><p style="z-index: 1;color: white;position: absolute;bottom: 20px;right: 20px">par Jonathan</p>`;
+  } else if (jb16alea10 < 79) {
+    jb16contenu = /*HTML*/ `
         <svg viewBox="0 0 593 593" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0_137_26" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="593" height="593">
         <circle cx="296.5" cy="296.5" r="277.5" fill="#A90000" stroke="#AF0000" stroke-width="38"/>
@@ -67,11 +84,11 @@ function jb16lancePostIt() {
         <circle cx="296.5" cy="296.5" r="277.5" stroke="#AF0000" stroke-width="38"/>
         </g>
         </svg>
-        <h4>Snowman's Land</h4>
+        <h4  style="z-index: -1">Snowman's Land</h4>
+        <h3>16</h3><p style="z-index: 1;color: white;position: absolute;bottom: 20px;right: 20px">par Jonathan</p>
     `;
-    } else if (jb16alea10 < 89) {
-    jb16contenu =/*HTML*/`
-        <h3>16</h3>
+  } else if (jb16alea10 < 89) {
+    jb16contenu = /*HTML*/ `
         <svg viewBox="0 0 568 568" fill="none" xmlns="http://www.=w3.org/2000/svg">
         <mask id="path-1-inside-1_140_25" fill="white">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M298.989 5.99892C287.272 -0.309052 280.705 -1.02812 268.989 5.99892V45.7755L249.931 26.7178C237.145 29.5485 232.531 34.2445 228.718 47.931L268.989 88.2019V138.776L249.931 119.718C237.145 122.548 232.531 127.245 228.718 140.931L268.989 181.202V193.776L256.221 181.007V177.258C245.178 170.218 238.595 170.277 226.221 177.258V205.023L217.982 196.784V136.019C206.939 128.979 200.356 129.038 187.982 136.019V166.784L152.221 131.023V70.2578C141.178 63.2182 134.595 63.2766 122.221 70.2578V101.023L99.4385 78.2408C84.1864 79.5572 80.255 84.9151 78.2253 99.454L96.9919 118.221H74.2578C67.2182 129.263 67.2766 135.846 74.2578 148.221H126.992L162.753 183.982H140.019C132.979 195.024 133.038 201.607 140.019 213.982H192.753L203.992 225.221H178.258C175.258 229.926 173.547 233.822 173.112 237.701C171.827 240.22 170.743 243.25 169.718 246.931L191.793 269.007H169.22L130.931 230.718C118.145 233.548 113.531 238.245 109.718 251.931L126.793 269.007H76.2197L37.931 230.718C25.1449 233.548 20.5314 238.245 16.7178 251.931L33.7933 269.007H8.00663C-1.84744 280.722 -0.83871 287.291 8.00663 299.007H37.472L16.7179 319.761C19.5485 332.547 24.2446 337.16 37.9311 340.974L79.8984 299.007H130.472L109.718 319.761C112.548 332.547 117.245 337.16 130.931 340.974L172.898 299.007H185.472L178.479 306H178.258C178.13 306.201 178.004 306.4 177.881 306.597L169.718 314.761C170.706 319.222 171.92 322.688 173.665 325.473C174.469 328.608 176.002 332.002 178.258 336H210.781L196.781 350H138.019C130.979 361.043 131.037 367.626 138.019 380H166.781L131.021 415.761H72.2578C65.2182 426.804 65.2766 433.386 72.2578 445.761H101.021L78.2252 468.556C79.5415 483.808 84.8995 487.74 99.4384 489.769L120.221 468.987L120.221 493.724C131.263 500.763 137.846 500.705 150.221 493.724V438.987L185.982 403.226V427.963C197.024 435.002 203.607 434.944 215.982 427.963V373.226L226.221 362.987V383.963C229.486 386.044 232.361 387.505 235.111 388.35C238.194 390.702 242.302 392.406 247.931 393.974L268.989 372.916V388.49L228.718 428.761C231.548 441.547 236.245 446.16 249.931 449.974L268.989 430.916V481.49L228.718 521.761C231.548 534.547 236.245 539.16 249.931 542.974L268.989 523.916V559.999C280.704 569.853 287.273 568.844 298.989 559.999V524.202L317.761 542.974C330.547 540.143 335.16 535.447 338.974 521.761L298.989 481.776V431.202L317.761 449.974C330.547 447.143 335.16 442.447 338.974 428.761L298.989 388.776V377.202L306 384.213V387.963C308.819 389.76 311.348 391.095 313.756 391.969L315.761 393.974C316.909 393.72 317.992 393.45 319.014 393.161C324.06 393.575 329.14 391.833 336 387.963V375.998C336.333 374.979 336.656 373.901 336.974 372.761L336 371.787V357.229L358 379.229V435.963C369.043 443.002 375.626 442.944 388 435.963V409.229L423.761 444.99V501.724C434.804 508.763 441.386 508.705 453.761 501.724V474.99L469.962 491.191C482.708 487.367 487.86 483.232 491.176 469.978L474.959 453.761H501.724C508.763 442.718 508.705 436.135 501.724 423.761H444.959L409.198 388H435.963C443.002 376.957 442.944 370.374 435.963 358H379.198L361.198 340H383.963C386.261 336.395 387.803 333.265 388.594 330.254C390.821 327.209 392.46 323.193 393.974 317.761L375.22 299.007H403.793L445.761 340.974C458.547 338.143 463.16 333.447 466.974 319.761L446.22 299.007H496.793L538.761 340.974C551.547 338.143 556.16 333.447 559.974 319.761L539.22 299.007H562.007C568.315 287.29 569.034 280.723 562.007 269.007H542.898L559.974 251.931C557.143 239.145 552.447 234.531 538.761 230.718L500.472 269.007H449.898L466.974 251.931C464.143 239.145 459.447 234.531 445.761 230.718L407.472 269.007H374.898L384.684 259.221H385.963C386.661 258.126 387.289 257.075 387.848 256.057L393.974 249.931C393.121 246.08 392.099 242.97 390.713 240.4C389.962 237.083 388.376 233.498 385.963 229.221H374.496C373.934 229.051 373.356 228.884 372.761 228.718L372.258 229.221H359.987L384.226 204.982H436.963C444.002 193.939 443.944 187.356 436.963 174.982H414.226L449.987 139.221H502.724C509.763 128.178 509.705 121.595 502.724 109.221H479.987L491.176 98.0323C487.351 85.2869 483.216 80.135 469.962 76.8191L454.761 92.0205V61.2578C443.718 54.2182 437.135 54.2766 424.761 61.2578V122.02L389 157.781V127.019C377.957 119.979 371.374 120.038 359 127.019V187.781L338 208.781V196.905L338.974 195.931C338.673 194.573 338.351 193.307 338 192.124V181.258C331.911 177.376 327.178 175.653 322.083 176.058C320.751 175.594 319.314 175.151 317.761 174.718L314.416 178.063C312.436 178.884 310.319 179.949 308 181.258V184.479L298.989 193.49V180.916L338.974 140.931C336.143 128.145 331.447 123.531 317.761 119.718L298.989 138.49V87.9162L338.974 47.931C336.143 35.1449 331.447 30.5314 317.761 26.7178L298.989 45.4898V5.99892ZM256.221 223.434V235.023L268.989 247.791V236.202L256.221 223.434ZM298.989 247.793V235.916L308 226.905V238.781L298.989 247.793ZM342.258 259.221H329.987L320.201 269.007H332.472L342.258 259.221ZM332.793 299.007L343.787 310H331.198L320.204 299.007H332.793ZM306 327.229V341.787L298.989 334.776V320.217L306 327.229ZM268.989 330.49L256.221 343.258V332.987L268.989 320.219V330.49ZM240.781 306H220.905L227.898 299.007H247.775L240.781 306ZM234.22 269.007L220.434 255.221H233.992L247.778 269.007H234.22Z"/>
@@ -91,10 +108,10 @@ function jb16lancePostIt() {
         </defs>
         </svg>
         <h4>Reste Cool</h4>
+        <h3>16</h3><p style="color: white;position: absolute;bottom: 20px;right: 20px">par Jonathan</p>
     `;
-} else if (jb16alea10 < 99) {
-        jb16contenu =/*HTML*/`
-            <h3>16</h3>
+  } else if (jb16alea10 < 99) {
+    jb16contenu = /*HTML*/ `
             <svg viewBox="0 0 532 532" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_146_73" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="532" height="532">
             <rect width="532" height="532" fill="#D9D9D9"/>
@@ -128,20 +145,24 @@ function jb16lancePostIt() {
             </g>
             </svg>
             <h4 style="font-size:1rem">Un présent et on oublie le passé!</h4>
+            <h3>16</h3><p style="color: white;position: absolute;bottom: 20px;right: 20px">par Jonathan</p>
         `;
-    } else {
-        jb16contenu = `<h3>16</h3><br><p style="text-align:center">Cette carte est rare.<br><br>Elle n'a que 1% de chance d'apparaitre.</p>`;
-    }
-    jb16nouveauPostIt.innerHTML = `${jb16contenu}`;
-    jb16nouveauPostIt.style.backgroundColor = `hsl(${jb16alea7},${jb16alea8}%,${jb16alea9}%)`
-    case16.append(jb16nouveauPostIt);
-    jb16postIt.animate(jb16animation, jb16options);
-    jb16postIt.classList.add(`jb16ancien`);
-    jb16postIt = jb16nouveauPostIt
-    jb16postIt.addEventListener("click", jb16lancePostIt);
-    const jb16anciensPostIts = document.querySelectorAll(`.jb16ancien`);
-    jb16anciensPostIts.forEach(element => {
-        setTimeout(function () { element.remove() }, 1000);
-    });
+  } else {
+    jb16contenu = `<br><p style="text-align:center">Cette carte est rare.<br><br>Elle n'a que 1% de chance d'apparaitre.</p>
+        <h3>16</h3><p style="color: white;position: absolute;bottom: 20px;right: 20px">par Jonathan</p>`;
+  }
+  jb16nouveauPostIt.innerHTML = `${jb16contenu}`;
+  jb16nouveauPostIt.style.backgroundColor = `hsl(${jb16alea7},${jb16alea8}%,${jb16alea9}%)`;
+  case16.append(jb16nouveauPostIt);
+  jb16postIt.animate(jb16animation, jb16options);
+  jb16postIt.classList.add(`jb16ancien`);
+  jb16postIt = jb16nouveauPostIt;
+  jb16postIt.addEventListener("click", jb16lancePostIt);
+  const jb16anciensPostIts = document.querySelectorAll(`.jb16ancien`);
+  jb16anciensPostIts.forEach((element) => {
+    setTimeout(function () {
+      element.remove();
+    }, 1000);
+  });
 }
 jb16postIt.addEventListener("click", jb16lancePostIt);

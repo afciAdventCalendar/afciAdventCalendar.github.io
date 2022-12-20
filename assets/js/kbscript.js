@@ -54,4 +54,8 @@ if (day > 15) {
       musickb = false;
     }
   });
+  case15card.classList.add("card-done");
+  case15card.innerHTML = `
+    <h3>15</h3>
+    <p>par Kévin B.</>`;
 }

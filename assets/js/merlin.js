@@ -1,6 +1,6 @@
 // CASE 5 - Animation Merlin -----------------------------------------------------------
-date = new Date();
-day = date.getDate();
+// date = new Date();
+// day = date.getDate();
 const case5 = document.querySelector("#case5");
 const card5 = case5.querySelector(".card");
 const card5HTML = `
