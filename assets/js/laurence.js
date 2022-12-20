@@ -1,5 +1,5 @@
-date = new Date();
-day = date.getDate();
+// date = new Date();
+// day = date.getDate();
 // CASE 11 -----------------------------------------------
 const case11 = document.getElementById("case11");
 const card11 = case11.querySelector(".card");
