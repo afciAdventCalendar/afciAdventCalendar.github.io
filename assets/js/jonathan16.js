@@ -148,8 +148,7 @@ function jb16lancePostIt() {
             <h3>16</h3><p style="color: white;position: absolute;bottom: 20px;right: 20px">par Jonathan</p>
         `;
   } else {
-    jb16contenu = `<br><p style="text-align:center">Cette carte est rare.<br><br>Elle n'a que 1% de chance d'apparaitre.</p>
-        <h3>16</h3><p style="color: white;position: absolute;bottom: 20px;right: 20px">par Jonathan</p>`;
+    jb16contenu = `<h3>16</h3><p style="color: white;position: absolute;bottom: 20px;right: 20px">par Jonathan</p><br><p style="text-align:center">Cette carte est rare.<br><br>Elle n'a que 1% de chance d'apparaitre.</p>`;
   }
   jb16nouveauPostIt.innerHTML = `${jb16contenu}`;
   jb16nouveauPostIt.style.backgroundColor = `hsl(${jb16alea7},${jb16alea8}%,${jb16alea9}%)`;
