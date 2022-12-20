@@ -138,26 +138,26 @@ if (window.innerWidth > 900) {
 // Animation de la div Hobby Music dans case 4
 const musicHobby4 = document.getElementById("hobby-music-4");
 // Music animation
-let sing = false;
+let sing4 = false;
 const audio4 = new Audio();
 audio4.src = "/assets/music/jingle-bells-meowy-christmas.mp3";
 audio4.loop = true;
-const playSing = () => {
+const playSing4 = () => {
   audio4.play();
   musicHobby4.classList.add("sing");
-  sing = true;
+  sing4 = true;
 };
-const pauseSing = () => {
+const pauseSing4 = () => {
   audio4.pause();
   musicHobby4.classList.remove("sing");
-  sing = false;
+  sing4 = false;
 };
 musicHobby4.addEventListener("click", () => {
-  if (!sing) {
-    playSing();
+  if (!sing4) {
+    playSing4();
     // setTimeout(pauseSing, 8000);
   } else {
-    pauseSing();
+    pauseSing4();
   }
 });
 // Notes animation

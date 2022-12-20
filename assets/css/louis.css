@@ -195,3 +195,86 @@
     opacity: 0;
   }
 }
+
+/* Case 20 */
+#case20 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 0, 0, 0.616);
+}
+.smiley {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+  background-color: rgb(250, 207, 151);
+  border: 4px solid black;
+}
+.left-eye,
+.right-eye {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35%;
+  height: 35%;
+  background: white;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+.left-eye {
+  margin-right: 10px;
+}
+.right-eye {
+  margin-left: 10px;
+}
+.left-pup,
+.right-pup {
+  position: absolute;
+  width: 45%;
+  height: 45%;
+  background-image: url(../font/cadeau.png);
+  background-size: cover;
+  border-radius: 100%;
+}
+#case20 .mouth {
+  width: 20%;
+  position: absolute;
+  height: 20%;
+  background-color: #ffffff;
+  transform: translate(-10%, -30%);
+  bottom: 5%;
+  left: 30%;
+  border-radius: 100px;
+  border: 2px solid black;
+}
+@keyframes border {
+  from {
+  }
+  to {
+    border: 10px solid black;
+  }
+}
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+@keyframes bouche {
+  from {
+    bottom: 5%;
+    height: 20%;
+  }
+  to {
+    background-color: rgb(247, 45, 45);
+    bottom: 15%;
+    height: 5%;
+  }
+}

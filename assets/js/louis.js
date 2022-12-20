@@ -1,5 +1,5 @@
 "use strict";
-// case 15 et 20 dec
+// case 10 et 20 dec
 const case10 = document.querySelector("#case10");
 const img = document.querySelector("#case10 img");
 const p = document.querySelector("#case10 p");
@@ -76,4 +76,49 @@ if (day >= 10) {
       toggleCard10 = 0;
     }
   });
+}
+// carte 20 ---------------------------------------------------------
+const card20 = document.querySelector("#case20 .card");
+const case20 = document.querySelector("#case20");
+const lefteye = document.querySelector(".smiley .left-pup");
+const leye = document.querySelector(".smiley .left-eye");
+const righteye = document.querySelector(".smiley .right-pup");
+const reye = document.querySelector(".smiley .right-eye");
+const s = document.querySelector("#case20 span");
+const mouth = document.querySelector(".mouth");
+case20.addEventListener("click", eyes);
+let open20 = false;
+
+// Quand la date est passée
+function updateCard20() {
+  if (day > 20 || open20) {
+    card20.classList.add("card-done");
+    card20.innerHTML = `
+    <h3>20</h3>
+    <p>par Louis</>`;
+    card20.style.backgroundColor = "#e8c547";
+  }
+}
+updateCard20();
+
+function eyes() {
+  open20 = true;
+  updateCard20();
+  card20.classList.toggle("card");
+  card20.classList.toggle("lift");
+  window.addEventListener("mousemove", function (event) {
+    let x = (event.clientX / (window.innerWidth * 2)) * 100;
+    let y = (event.clientY / (window.innerHeight * 2)) * 100;
+
+    lefteye.style.left = `${x}%`;
+    lefteye.style.top = `${y}%`;
+
+    righteye.style.left = `${x}%`;
+    righteye.style.top = `${y}%`;
+  });
+  mouth.style.animation = "bouche 2s infinite alternate";
+  lefteye.style.animation = "scale 2s infinite alternate";
+  leye.style.animation = "border 2s infinite alternate";
+  righteye.style.animation = "scale 2s infinite alternate";
+  reye.style.animation = "border 2s infinite alternate";
 }
