@@ -5,6 +5,7 @@ const nwm24 =
 {
     urlFont: "assets/font/Raleway/static/Raleway-Bold.ttf",
     canvas : document.querySelector("canvas.nwm-back"),
+    card : document.querySelector("#case24 .card"),
     ctx: {},
     grid: { h: 30, w: 30 },
     settings: {
@@ -26,7 +27,11 @@ const nwm24 =
         this.resize();
         this.bgColor();
         this.makeGrid();
+        const d = new Date();
+        if(d.getDate()<24|| d.getFullYear>2022) return;
+        this.lightOn();
         this.canvas.addEventListener("click", this.destroyEvent.bind(this));
+        window.addEventListener("resize", this.resize.bind(this))
     },
     /**
      * Donne au canvas la taille de son parent.
@@ -52,7 +57,7 @@ const nwm24 =
         const font = await superFont.load();
         document.fonts.add(font);
         // création du cercle blanc
-        this.ctx.fillStyle = "white";
+        this.ctx.fillStyle = "rgb(217, 245, 240)";
         this.ctx.arc(60, 60, 30, 0, Math.PI*2)
         this.ctx.fill();
         // Affichage du numéro de la case.
@@ -60,12 +65,12 @@ const nwm24 =
         this.ctx.font = "24px Raleway";
         this.ctx.textAlign = "center";
         this.ctx.fillText("24", 60, 65);
+        // Afficher le nom de l'auteur.
         if(!this.destroyed) return;
         this.ctx.fillStyle = "white";
-        this.ctx.font = "24px Raleway";
-        this.ctx.textAlign = "left";
-        // TODO : trouver le bon placement
-        this.ctx.fillText("par Nolwenn", 60, 65);
+        this.ctx.font = "16px Arial";
+        this.ctx.textAlign = "right";
+        this.ctx.fillText("par Nolwenn", this.canvas.width-30, this.canvas.height-30);
 
     },
     /**
@@ -91,18 +96,22 @@ const nwm24 =
      * Si la grille n'est pas vide, calcul le délai entre chaque cases à détruire.
      * @return {void}
      */
-    destroyEvent()
+    async destroyEvent()
     {
         
         if(this.destroyed)
         {
             this.settings.color = "#285460";
-            this.bgColor();
+            await this.bgColor();
             this.makeGrid();
             this.destroyed = false;
+            this.card.classList.add("lift");
+            this.card.style.transition = "";
             return;
         }
         if(!this.grid.c.length)return;
+        this.card.classList.remove("lift");
+        this.card.style.transition = "none";
         let max = this.grid.c.length
         let time = this.settings.animationTime/max;
         for (let i = 0; i < max; i++) {
@@ -171,6 +180,33 @@ const nwm24 =
     {
         if(max) return Math.floor(Math.random()*max);
         return Math.random()<0.5?1:-1;
+    },
+    /**
+     * Allume les lumières.
+     */
+    lightOn()
+    {
+        const lis = this.card.querySelectorAll(".light li");
+        lis.forEach(li=>{
+            li.style.backgroundColor = li.className;
+            li.style.boxShadow = 
+            "0 0 35px 10px "+li.className;
+            const keyframes = {
+                boxShadow: [
+                    "0 0 35px 10px "+li.className,
+                    "none",
+                    "0 0 35px 10px "+li.className,
+                ]
+            }
+            const options = {
+                duration: 2000,
+                iterations: Infinity
+            }
+            setTimeout(()=>{
+                li.animate(keyframes, options);
+            }, 150 * Math.ceil(Math.random()*20))
+            
+        })
     }
 }
 nwm24.start();
