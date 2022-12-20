@@ -1,0 +1,74 @@
+#case24 .card h3{
+    display: none;
+}
+#case24 .card{
+    padding: 0;
+}
+.nwm-card{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+.nwm-front, .nwm-back{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.nwm-front{
+    background-color: black;
+}
+.nwm-back{
+    background-color: #eb6d13;
+}
+.nwm-card .light{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height: 100%;
+    padding: 1rem 0;
+}
+.nwm-card .light li{
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    background-color: white;
+    height: 15%;
+    aspect-ratio: 2/5;
+    margin: 0 3.5%;
+    border-radius: 50%;
+}
+.nwm-card .light li::before, .nwm-card .light li::after
+{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: rgb(65, 65, 65);
+}
+.nwm-card .light li::before{
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 30%;
+    border-radius: 20%;
+}
+.nwm-card .light li:not(:last-child)::after
+{
+    border-bottom: 2px solid rgb(65, 65, 65);
+    width: 150%;
+    left: 90%;
+    border-radius: 30%;
+}
+.nwm-front p
+{
+    font-family: "Hi-Christmas";
+    color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: clamp(2rem, 20%, 4rem);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
