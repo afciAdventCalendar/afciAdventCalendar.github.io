@@ -1,16 +1,17 @@
 "use strict";
+const card17 = document.querySelector("#case17 .card");
+if (day > 17) {
+  card17.classList.add("card-done", "lift");
+  card17.innerHTML = `
+       <h3>17</h3>
+     <p>par Jonathan</>`;
+}
 const jb17case17 = document.querySelector(`#case17`);
 let jb17card = jb17case17.querySelector(`.card`);
-if (day > 17) {
-  jb17card.classList.add("card-done", "lift");
-  jb17card.innerHTML = `
-    <h3>17</h3>
-    <p>par Jonathan</>`;
-}
 const jb17content = jb17case17.querySelector(`.card-content`);
 const jb17wrap = jb17case17.querySelector(`.jb17Wrap`);
 let jb17cardOpen = false;
-const popSound = new Audio("./assets/music/break-86966.mp3");
+const popSound = new Audio("./assets/music/break.mp3");
 function jb17cardOpening() {
   if (jb17cardOpen == true) {
     jb17card.style.transform = "translate(0) rotate(0)";
@@ -74,7 +75,6 @@ function wrapperAppears() {
     let jb17wrapperPaper = document.querySelector(`.jb17wrapperPaper`);
     let jb17bubble = document.querySelectorAll(`.jb17bubble`);
     function bubblePop(e) {
-      console.log(e.target);
       popSound.pause();
       popSound.currentTime = 0;
       popSound.play();
@@ -128,12 +128,15 @@ function wrapperAppears() {
     jb17bubble.forEach((element) => {
       element.addEventListener("click", bubblePop);
     });
-    console.log(jb17wrapperPaper);
     viewAnimation.style.display = "block";
     const closer = document.querySelector(".close");
     closer.addEventListener("click", () => {
       viewAnimation.innerHTML = "";
       viewAnimation.style.display = "none";
+      if (jb17cardOpen == true) {
+        jb17card.style.transform = "translate(0) rotate(0)";
+        jb17cardOpen = false;
+      }
     });
   });
 }

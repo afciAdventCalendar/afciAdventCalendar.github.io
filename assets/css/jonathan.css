@@ -9,10 +9,10 @@
 }
 #case16 h4 {
   position: absolute;
-  top: 25%;
-  left: 50%;
+  top: 20%;
+  left: 60%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 #case16 svg {
@@ -20,7 +20,7 @@
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
+  width: 60%;
   aspect-ratio: 1/1;
 }
 #case16 > .jb16ancien {
