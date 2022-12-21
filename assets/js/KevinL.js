@@ -80,15 +80,20 @@ const card21HTML = `
 // Si l'utilisateur n'est pas sur un smartphone
 // Mise en plein écran via la div viewAnimation
 if (window.innerWidth > 900) {
-  card21Container.addEventListener("click", () => {
+  card21Container.addEventListener("click", (e) => {
+    if (e.target instanceof HTMLButtonElement) return;
     console.log("test");
     viewAnimation.innerHTML = card21HTML;
     viewAnimation.style.display = "block";
+    const btnKL = document.querySelector(".b1KL");
+    santaKL = document.querySelector("#SantaKL");
+    btnKL.addEventListener("click", eventBtn);
     const closer = document.querySelector(".close");
     closer.addEventListener("click", () => {
       viewAnimation.innerHTML = "";
+      santaKL = document.querySelector("#SantaKL");
       viewAnimation.style.display = "none";
-      card21Container.style.zIndex = 0;
+      // card21Container.style.zIndex = 0;
       closeCard21();
     });
   });
@@ -101,16 +106,17 @@ function closeCard21() {
   card21.style.transformOrigin = "top left";
 }
 // -------------------------------------------------------
-const btnKL = document.querySelector(".b1KL");
-const santaKL = document.querySelector(".SantaKL");
+let btnKL = document.querySelector(".b1KL");
+let santaKL = document.querySelector("#SantaKL");
 const audio1KL = document.querySelector("#myAudioKL");
 const audio2KL = document.querySelector("#myAudio2KL");
 // Click animation Santa + audio play on background.
-btnKL.addEventListener("click", () => {
+btnKL.addEventListener("click", eventBtn);
+function eventBtn() {
   moveKL();
   jinglesKL();
   soundKL();
-});
+}
 // Animaton Santa left to right
 function moveKL() {
   const keyframes = [
@@ -133,6 +139,7 @@ function moveKL() {
 }
 // 1st audio
 function jinglesKL() {
+  console.log("testAudio");
   audio1KL.play();
 }
 // 2nd audio

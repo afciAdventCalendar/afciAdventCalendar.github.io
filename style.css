@@ -259,8 +259,14 @@ footer span {
 @keyframes noel {
   from {
     opacity: 1;
+    visibility: visible;
+  }
+  90% {
+    opacity: 0;
+    visibility: visible;
   }
   to {
     opacity: 0;
+    visibility: hidden;
   }
 }

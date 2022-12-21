@@ -1,7 +1,7 @@
 "use strict";
 const date = new Date();
 let day = date.getDate();
-// let day = 21;
+// let day = 24;
 const caseDay = document.querySelector(`#case${day}`);
 const cases = document.querySelectorAll(".case");
 const viewAnimation = document.querySelector("#view-animation");
@@ -120,6 +120,7 @@ const merlinCard = `
           <h2>Je parle de la vraie.. (non)</h2>
         </div>
 `;
+
 function merlinAnimation() {
   if (toggleCase2 == 0) {
     showDefault(case2);
@@ -133,9 +134,13 @@ function merlinAnimation() {
     toggleCase2 = 1;
   } else {
     case2.style.backgroundColor = "#e8c547";
-    case2.innerHTML = `<div class="card"></div>`;
-
+    case2.innerHTML = `<div class="card lift card-done">
+    <h3>02</h3>
+    <p>par Merlin</p>  
+    </div>`;
     toggleCase2 = 0;
+    const card2 = case2.querySelector("#case2 .card");
+    card2.style.backgroundColor = "#e8c547";
   }
 }
 if (date2 < day) {
