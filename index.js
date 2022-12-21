@@ -56,6 +56,7 @@ for (let i = 0; i < 24; i++) {
     const caseDay = document.querySelector(`#case${j}`);
     const cardDay = caseDay.querySelector(".card");
     if (j < day) {
+      if (j == 18) continue;
       // let p = 3 * i + 1;
       // let y = 3 * i + 2;
       // let b = 3 * i;

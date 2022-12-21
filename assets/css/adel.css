@@ -1,0 +1,103 @@
+/* On centre le container via un display flex qui prends toute la largeur */
+.container {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  color: #fff;
+  background-color: #0f1923;
+}
+
+/* Ici, le curseur s'active lorsqu'on passe la souris sur le 18, la couleure est rouge de taille 4 rem et en gras. Centré au milieu via un flex */
+.porte {
+  cursor: pointer;
+  font-size: 4rem;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  transform-origin: left;
+  transition: all 0.5s ease-in-out;
+}
+.ouverture {
+  transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px)
+    rotateY(-105deg);
+}
+.porte span {
+  display: inline-block;
+  overflow: hidden;
+}
+.porte span span {
+  display: block;
+  transform: translateY(100%);
+  animation: porteReveal 0.7s both;
+}
+@keyframes porteReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#case18 .card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#case18 img {
+  height: 100%;
+  width: 100%;
+}
+
+#case18 .card::before {
+  content: "par Adel";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  color: white;
+  padding: 0 20px 20px 0;
+  background-color: #285460;
+  transform: rotateY(0deg);
+  transform-origin: right;
+  transition: all 0.6s;
+}
+#case18 .card::after {
+  background-color: #285460;
+  content: "?";
+  font-size: 100px;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  transform-origin: left;
+  transform: rotateY(0deg);
+  transition: all 0.6s;
+}
+
+#case18 .card:hover::before {
+  transform: rotateY(270deg);
+}
+#case18 .card:hover::after {
+  transform: rotateY(-90deg);
+}
+#case18 .card:hover::before {
+  transition-delay: 0.6s;
+}
