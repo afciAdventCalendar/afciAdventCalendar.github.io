@@ -1,0 +1,142 @@
+.jb7letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jb7letter>.jb7img {
+    color: goldenrod;
+    text-shadow: black 1px 0px 0px, black 0.540302px 0.841471px 0px, black -0.416147px 0.909297px 0px, black -0.989992px 0.14112px 0px, black -0.653644px -0.756802px 0px, black 0.283662px -0.958924px 0px, black 0.96017px -0.279415px 0px;
+    position: relative;
+    margin-top: 2.5vh;
+    height: 95vh;
+    aspect-ratio: 1/1.4;
+}
+
+.jb7letter>.jb7img>img,
+.jb7form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+}
+
+.jb7form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:
+        conic-gradient(from 140deg at 50% 87.5%, #0000, #fff 1deg 79deg, #0000 81deg) 0 calc(75px/-4), conic-gradient(from 140deg at 50% 87.5%, #0000, #fff 1deg 79deg, #0000 81deg) 75px calc(3*75px/4),
+        conic-gradient(from 140deg at 50% 81.25%, #0000, #fff 1deg 79deg, #0000 81deg), conic-gradient(from 140deg at 50% 81.25%, #0000, #fff 1deg 79deg, #0000 81deg) 75px 75px,
+        conic-gradient(from 140deg at 50% 75%, #0000, #fff 1deg 79deg, #0000 81deg) 0 calc(75px/ 4), conic-gradient(from 140deg at 50% 75%, #0000, #fff 1deg 79deg, #0000 81deg) 75px calc(5*75px/4),
+        conic-gradient(at 10% 20%, #0000 75%, #fff 0) calc(75px/-10) 75px,
+        conic-gradient(at 10% 20%, #0000 75%, #fff 0) calc(9*75px/10) calc(2*75px),
+        repeating-conic-gradient(from 45deg, #a31e39 0 25%, #31570e 0 50%);
+    background-size: calc(2*75px) calc(2*75px);
+}
+
+.jb7form>h1,
+.jb7form>p {
+    font-size: 1.5rem;
+    text-align: center;
+    height: 15%;
+    width: 90%;
+}
+
+.jb7form>h1 {
+    padding-top: 2%;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.jb7form>label {
+    font-size: 1.1rem;
+    position: absolute;
+    top: 74%;
+    left: 23%;
+    transform: translate(-50%, -50%);
+    height: 22%;
+    width: 28%;
+}
+
+.jb7form>label:first-of-type {
+    top: 44%;
+}
+
+.jb7form>label:last-of-type {
+    top: 94%;
+    height: 2%;
+}
+
+#jb7Plaintes,
+#jb7Atouts,
+#jb7Nom {
+    width: 50%;
+    height: 25%;
+    line-height: 1.5rem;
+    position: absolute;
+    top: 44%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid black;
+}
+
+#jb7Atouts {
+    height: 22%;
+    top: 74%;
+}
+
+#jb7Nom {
+    height: 2%;
+    position: absolute;
+    top: 95%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+}
+
+.jb7Submit {
+    font-size: 1.6rem;
+    color: goldenrod;
+    position: absolute;
+    top: 90%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 5%;
+    border-radius: 15px;
+    background-color: #a31e39;
+    box-shadow: inset 5px 5px 5px rgba(255, 255, 255, 0.744), 5px 5px 5px rgba(0, 0, 0, 0.415);
+}
+
+#case7 .card-content {
+    color: goldenrod;
+    background:
+        conic-gradient(from 140deg at 50% 87.5%, #0000, #fff 1deg 79deg, #0000 81deg) 0 calc(75px/-4), conic-gradient(from 140deg at 50% 87.5%, #0000, #fff 1deg 79deg, #0000 81deg) 75px calc(3*75px/4),
+        conic-gradient(from 140deg at 50% 81.25%, #0000, #fff 1deg 79deg, #0000 81deg), conic-gradient(from 140deg at 50% 81.25%, #0000, #fff 1deg 79deg, #0000 81deg) 75px 75px,
+        conic-gradient(from 140deg at 50% 75%, #0000, #fff 1deg 79deg, #0000 81deg) 0 calc(75px/ 4), conic-gradient(from 140deg at 50% 75%, #0000, #fff 1deg 79deg, #0000 81deg) 75px calc(5*75px/4),
+        conic-gradient(at 10% 20%, #0000 75%, #fff 0) calc(75px/-10) 75px,
+        conic-gradient(at 10% 20%, #0000 75%, #fff 0) calc(9*75px/10) calc(2*75px),
+        repeating-conic-gradient(from 45deg, #a31e39 0 25%, #31570e 0 50%);
+    background-size: calc(2*75px) calc(2*75px);
+}
+
+#case7 .card-content>p {
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+#case7 .jb7link {
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+}
+
+#case7 .jb7link:hover {
+    color: red;
+}
+
+.jb7hide {
+    transition: opacity 1s;
+}
