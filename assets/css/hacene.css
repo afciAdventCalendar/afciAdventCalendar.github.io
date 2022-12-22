@@ -1,0 +1,45 @@
+#card22 {
+  transform: rotateX(120deg) rotateY(-60deg) rotateZ(10deg);
+}
+.sliderahcene {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+.slidesahcene {
+  width: calc(100% * 3);
+  animation: glisseahcene 10s infinite;
+  margin-top: 22%;
+}
+#view-animation .slidesahcene {
+  margin-top: 7%;
+}
+
+.slideahcene {
+  float: left;
+  width: 33.33333%;
+  height: 100%;
+}
+img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  min-height: 100%;
+}
+
+@keyframes glisseahcene {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-33.33333%);
+  }
+  50% {
+    transform: translateX(-33.33333%);
+  }
+  75% {
+    transform: translateX(-66.66666%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
