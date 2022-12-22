@@ -6,12 +6,22 @@ const card11 = case11.querySelector(".card");
 const card11Container = case11.querySelector(".card-container");
 const card11HTML = `
         <div class="card11-container">
-          <div class="card-content">
-            <div class="close">
+          <div class="card11-content">
+          <div class="close">
               <div class="cross"></div>
               <div class="cross"></div>
             </div>
-            <h2>XOXO</h2>
+            <h3 class="score-card11">0</h3>
+            <div class="view-card11">
+              <p class="message-card11">
+                Attraper le maximun de boule de neige en cliquant dessus.
+              </p>
+              <p>
+                MEILLEUR RECORD <span class="prenom-card11"></span> :
+                <span id="record"></span>
+              </p>
+              <button id="play-card11">JOUER</button>
+            </div>
           </div>
         </div>
 `;
@@ -62,10 +72,10 @@ function closeCard11() {
 // Mise en plein écran via la div viewAnimation
 if (window.innerWidth > 900) {
   card11Container.addEventListener("click", () => {
-    console.log("test");
     viewAnimation.innerHTML = card11HTML;
     viewAnimation.style.display = "block";
     const closer = document.querySelector(".close");
+    playCard11();
     closer.addEventListener("click", () => {
       viewAnimation.innerHTML = "";
       viewAnimation.style.display = "none";
