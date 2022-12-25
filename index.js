@@ -8,6 +8,7 @@ const viewAnimation = document.querySelector("#view-animation");
 // Au chargement de la page on se place au niveau de la case du jour
 window.addEventListener("load", goTo);
 function goTo() {
+  if (day > 24) return;
   caseDay.classList.add("dateDay");
   setTimeout(() => {
     caseDay.scrollIntoView("top");

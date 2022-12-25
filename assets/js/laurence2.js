@@ -2,8 +2,6 @@ function playCard11() {
   const viewContainerCard11 = document.querySelector(
     "#view-animation .card11-container"
   );
-  console.log(viewContainerCard11);
-
   const counterDisplay = document.querySelector(
     "#view-animation .score-card11"
   );
@@ -27,33 +25,21 @@ function playCard11() {
     const bubble = document.createElement("span");
     bubble.classList.add("bubble");
     console.log(bubble);
-
     viewContainerCard11.appendChild(bubble);
     console.log(viewContainerCard11);
-
     const size = getRandomNumber(80, 100) + "px";
     bubble.style.height = size;
     bubble.style.width = size;
-
-    bubble.style.top = Math.random() * 100 + "%";
-    bubble.style.left = Math.random() * 100 + 100 + "%";
-
-    // Ajout d'une variable plusMinus pour faire partir les bulles aléatoirement vers la gauche ou la droite
-    // plusMinus vaudra 1 ou -1
-    const plusMinus = Math.random() > 0.5 ? 1 : -1;
-    // Modification de la variable css --left grâce à setProperty
-    bubble.style.setProperty("--left", Math.random() * 100 * plusMinus + "%");
-
+    bubble.style.left = getRandomNumber(10, 90) + "%";
     bubble.addEventListener("click", () => {
       counterCard11++;
       counterDisplay.textContent = counterCard11;
       bubble.remove();
     });
-
     // On fait disparaître les bulles à la fin de l'animation anim dure 8s donc pour setTimeout 8000
     setTimeout(() => {
-      bubble.remove();
-    }, 5000);
+      //bubble.remove();
+    }, 10000);
   };
   // Lancement du jeu au click
   if (btnPlayCard11) {
@@ -62,7 +48,7 @@ function playCard11() {
       counterCard11 = 0;
       btnPlayCard11.textContent = "JOUER";
       btnPlayCard11.disabled = true;
-      intervalCard11 = setInterval(bubbleMaker, 500);
+      intervalCard11 = setInterval(bubbleMaker, 800);
       setTimeout(() => {
         clearInterval(intervalCard11);
         if (counterCard11 > recordCard11) {

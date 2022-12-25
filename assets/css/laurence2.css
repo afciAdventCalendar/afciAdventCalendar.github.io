@@ -37,20 +37,14 @@
   position: absolute;
   border-radius: 300px;
   background: rgba(255, 255, 255, 0.6);
-  opacity: 0;
-  animation: anim 10s forwards;
+  animation: animCard11 8s forwards;
 }
-
-@keyframes anim {
+@keyframes animCard11 {
   from {
-    top: -10%;
-    left: var(--left);
-    opacity: 1;
+    top: -100px;
   }
   to {
-    top: 110%;
-    left: var(--left);
-    opacity: 1;
+    top: calc(100% + 100px);
   }
 }
 .score-card11 {
@@ -60,4 +54,6 @@
   color: #ffd700;
   border-radius: 0;
   background: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
